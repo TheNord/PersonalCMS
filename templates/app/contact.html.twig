@@ -1,0 +1,44 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block title %}Contact Page title{% endblock %}
+
+{% block meta %}
+    <meta name="description" content="Contact page description" />
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Hello, write us!</h1>
+
+        {% if status %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ status }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+
+        <form action="{{ path_for('contact_send') }}" method="post">
+            {{ csrf_input_widget() }}
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Password" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{% endblock %}
