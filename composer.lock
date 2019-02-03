@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08ebdd0dc440646d5183472b199454c6",
+    "content-hash": "26b4a3dcbad2230d3ca9a7861ea744cc",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1570,6 +1570,256 @@
             "time": "2018-11-20T15:27:04+00:00"
         },
         {
+            "name": "schnittstabil/csrf-tokenservice",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schnittstabil/csrf-tokenservice.git",
+                "reference": "e23d09cb235589fda3b42b36aaa21aa19bd833ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schnittstabil/csrf-tokenservice/zipball/e23d09cb235589fda3b42b36aaa21aa19bd833ec",
+                "reference": "e23d09cb235589fda3b42b36aaa21aa19bd833ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "spomky-labs/base64url": "^1.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.3.0",
+                "fabpot/php-cs-fixer": "^1.10",
+                "halleck45/phpmetrics": "^1.8",
+                "phpmd/phpmd": "^2.3",
+                "satooshi/php-coveralls": "^1.0.1",
+                "schnittstabil/sugared-phpunit": "^0.2.0",
+                "squizlabs/php_codesniffer": "^2.5",
+                "vladahejda/phpunit-assert-exception": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Schnittstabil\\Csrf\\TokenService\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mayer",
+                    "email": "michael@schnittstabil.de"
+                }
+            ],
+            "description": "Stateless CSRF (Cross-Site Request Forgery) token service.",
+            "homepage": "https://github.com/schnittstabil/csrf-tokenservice",
+            "keywords": [
+                "URL-safe",
+                "cross-site request forgery",
+                "csrf",
+                "generator",
+                "hmac",
+                "service",
+                "session riding",
+                "stateless",
+                "token",
+                "validator",
+                "xsrf"
+            ],
+            "time": "2016-04-08T16:15:05+00:00"
+        },
+        {
+            "name": "schnittstabil/get",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schnittstabil/get.git",
+                "reference": "d6deacea909eae5f399069da5e27ee7975ab9fd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schnittstabil/get/zipball/d6deacea909eae5f399069da5e27ee7975ab9fd7",
+                "reference": "d6deacea909eae5f399069da5e27ee7975ab9fd7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "schnittstabil/phpunit-starter": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "schnittstabil/sugared-phpunit": {
+                    "bootstrap": "tests/bootstrap.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Schnittstabil\\Get\\": "src"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mayer",
+                    "email": "michael@schnittstabil.de"
+                }
+            ],
+            "description": "Get nested array values and object properties.",
+            "homepage": "https://github.com/schnittstabil/get",
+            "keywords": [
+                "array",
+                "coalescing",
+                "get",
+                "nested",
+                "null",
+                "object",
+                "value"
+            ],
+            "time": "2017-05-26T10:34:55+00:00"
+        },
+        {
+            "name": "schnittstabil/psr7-csrf-middleware",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schnittstabil/psr7-csrf-middleware.git",
+                "reference": "77ed95de38c77b0d70485b5477390fb162f6b244"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schnittstabil/psr7-csrf-middleware/zipball/77ed95de38c77b0d70485b5477390fb162f6b244",
+                "reference": "77ed95de38c77b0d70485b5477390fb162f6b244",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "psr/http-message": "^1.0",
+                "schnittstabil/csrf-tokenservice": "^2.0",
+                "schnittstabil/get": "^2.0",
+                "schnittstabil/psr7-middleware-stack": "^3.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.3.0",
+                "dflydev/fig-cookies": "^1.0",
+                "fabpot/php-cs-fixer": "^1.10",
+                "halleck45/phpmetrics": "^1.8",
+                "pdepend/pdepend": "dev-fix-namespaced-consts-and-functions as 2.0",
+                "phpmd/phpmd": "^2.3",
+                "satooshi/php-coveralls": "^1.0.1",
+                "schnittstabil/sugared-phpunit": "^0.2.0",
+                "slim/slim": "3.3.0",
+                "squizlabs/php_codesniffer": "^2.5",
+                "vladahejda/phpunit-assert-exception": "^1.0",
+                "zendframework/zend-diactoros": "^1.3"
+            },
+            "suggest": {
+                "dflydev/fig-cookies": "To protect via Cookies, e.g. MiddlewareBuilder::buildCookieToHeaderMiddleware()."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Schnittstabil\\Psr7\\Csrf\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mayer",
+                    "email": "michael@schnittstabil.de"
+                }
+            ],
+            "description": "Stateless PSR-7 CSRF (Cross-Site Request Forgery) protection middleware - simple Slim Framework 3 integration.",
+            "homepage": "https://github.com/schnittstabil/psr7-csrf-middleware",
+            "keywords": [
+                "angularjs",
+                "cross-site request forgery",
+                "csrf",
+                "expressive",
+                "hmac",
+                "middleware",
+                "psr",
+                "psr-7",
+                "psr7",
+                "session riding",
+                "slim",
+                "stateless",
+                "stratigility",
+                "xsrf"
+            ],
+            "time": "2016-04-08T15:30:59+00:00"
+        },
+        {
+            "name": "schnittstabil/psr7-middleware-stack",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schnittstabil/psr7-middleware-stack.git",
+                "reference": "e62da0bf1dae2c92014e254baef0c8b7e8c342e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schnittstabil/psr7-middleware-stack/zipball/e62da0bf1dae2c92014e254baef0c8b7e8c342e6",
+                "reference": "e62da0bf1dae2c92014e254baef0c8b7e8c342e6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.3.0",
+                "fabpot/php-cs-fixer": "^1.10",
+                "halleck45/phpmetrics": "^1.8",
+                "mrclay/minify": "^2.2",
+                "oscarotero/psr7-middlewares": "^3.12",
+                "phpmd/phpmd": "^2.3",
+                "psr/http-message": "^1.0",
+                "satooshi/php-coveralls": "^1.0.1",
+                "schnittstabil/sugared-phpunit": "^0.2.0",
+                "slim/slim": "^3.3",
+                "squizlabs/php_codesniffer": "^2.5",
+                "willdurand/negotiation": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Schnittstabil\\Psr7\\MiddlewareStack\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Mayer",
+                    "email": "michael@schnittstabil.de"
+                }
+            ],
+            "description": "Stack PSR-7 middlewares in a reusable way.",
+            "homepage": "https://github.com/schnittstabil/psr7-middleware-stack",
+            "keywords": [
+                "expressive",
+                "middleware",
+                "psr",
+                "psr-7",
+                "psr7",
+                "slim",
+                "stack",
+                "stratigility"
+            ],
+            "time": "2016-04-08T15:21:20+00:00"
+        },
+        {
             "name": "slim/php-view",
             "version": "2.2.0",
             "source": {
@@ -1739,6 +1989,58 @@
                 "view"
             ],
             "time": "2018-05-07T10:54:29+00:00"
+        },
+        {
+            "name": "spomky-labs/base64url",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spomky-Labs/base64url.git",
+                "reference": "ef6d5fb93894063d9cee996022259fd08d6646ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spomky-Labs/base64url/zipball/ef6d5fb93894063d9cee996022259fd08d6646ea",
+                "reference": "ef6d5fb93894063d9cee996022259fd08d6646ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Base64Url\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent Morselli",
+                    "homepage": "https://github.com/Spomky-Labs/base64url/contributors"
+                }
+            ],
+            "description": "Base 64 URL Safe Encoding/decoding PHP Library",
+            "homepage": "https://github.com/Spomky-Labs/base64url",
+            "keywords": [
+                "base64",
+                "rfc4648",
+                "safe",
+                "url"
+            ],
+            "time": "2016-01-21T19:50:30+00:00"
         },
         {
             "name": "stormiix/laravel-mix-twig-extension",

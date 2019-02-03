@@ -1,7 +1,7 @@
 <?php
 // DIC configuration
 
-
+use Schnittstabil\Psr7\Csrf\MiddlewareBuilder as CsrfMiddlewareBuilder;
 
 $container = $app->getContainer();
 
@@ -19,6 +19,13 @@ $container['logger'] = function ($c) {
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
+};
+
+$app->getContainer()['csrf'] = function ($c) {
+    $key = 'fdtt435ccxgt346h';
+
+    return CsrfMiddlewareBuilder::create($key)
+        ->buildSynchronizerTokenPatternMiddleware();
 };
 
 return $container;

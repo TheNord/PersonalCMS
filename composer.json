@@ -22,7 +22,8 @@
         "fzaninotto/faker": "^1.8",
         "doctrine/migrations": "^2.0",
         "dasprid/container-interop-doctrine": "^1.1",
-        "filp/whoops": "^2.3"
+        "filp/whoops": "^2.3",
+        "schnittstabil/psr7-csrf-middleware": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8 < 6.0",

@@ -1,6 +1,7 @@
 <?php
 
 
+use Framework\Templates\Extensions\CsrfExtension;
 use Stormiix\Twig\Extension\MixExtension;
 
 // view renderer
@@ -25,6 +26,11 @@ $container['view'] = function ($c) {
 
     // Added mix extension
     $view->addExtension($c->get(MixExtension::class));
+
+    // CSRF Protection
+    $view->addExtension(new CsrfExtension(
+        [$c['csrf']->getTokenService(), 'generate']
+    ));
 
     return $view;
 };
