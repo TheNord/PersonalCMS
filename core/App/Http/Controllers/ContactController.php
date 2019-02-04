@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Service\ContactService;
 use Slim\Http\Request;
 use Slim\Http\Response;
+use App\Http\Validation\ContactFormValidation;
 
 class ContactController
 {
@@ -23,11 +24,26 @@ class ContactController
     public function send(Request $request, Response $response) {
         $data = $request->getParsedBody();
 
-        $this->service->sending($data);
+        // validate data
+        $validation = ContactFormValidation::validate($data);   
 
-        // need redirect user
-        return $this->view->render($response, 'app/contact.html.twig', [
-            'status' => 'Successfully sent!'
-        ]);
+        if (count($validation) > 0) {
+            return $this->view->render($response, 'app/contact.html.twig', [
+                'errors' => $validation
+            ]);
+        }
+
+        try {
+            $this->service->sending($data);
+
+            // need redirect user
+            return $this->view->render($response, 'app/contact.html.twig', [
+                'status' => 'Successfully sent!'
+            ]);
+        } catch (\Exception $e) {
+            return $this->view->render($response, 'app/contact.html.twig', [
+                'errors' => [$e->getMessage()]
+            ]);
+        }
     }
 }

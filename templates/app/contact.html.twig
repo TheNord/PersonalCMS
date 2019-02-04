@@ -19,6 +19,14 @@
         </div>
         {% endif %}
 
+        {% if errors %}
+        <ul class="list-errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         <form action="{{ path_for('contact_send') }}" method="post">
             {{ csrf_input_widget() }}
 

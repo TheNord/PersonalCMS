@@ -14527,3 +14527,8 @@ h1 {
   background-color: #0c64a2;
 }
 
+.list-errors {
+  list-style: none;
+    color: #bd2323;
+    padding-left: 0;
+}

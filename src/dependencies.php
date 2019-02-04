@@ -21,7 +21,15 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
-$app->getContainer()['csrf'] = function ($c) {
+$container['session'] = function ($c) {
+	$session_factory = new \Aura\Session\SessionFactory;
+	$session = $session_factory->newInstance($_SESSION);
+	$segment = $session->getSegment('slim');
+
+	return $segment;
+};
+
+$container['csrf'] = function ($c) {
     $key = 'fdtt435ccxgt346h';
 
     return CsrfMiddlewareBuilder::create($key)

@@ -1,5 +1,8 @@
 <?php
 
+# windows: php vendor/doctrine/orm/bin/doctrine
+# unix: php vendor/bin/doctrine
+
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Slim\Container;

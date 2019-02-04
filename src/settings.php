@@ -39,7 +39,7 @@ return [
                 'port' => 3306,
                 'dbname' => 'app',
                 'user' => 'root',
-                'password' => 'new-password',
+                'password' => '',
                 'charset' => 'utf8'
             ]
         ],
