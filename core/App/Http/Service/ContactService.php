@@ -26,7 +26,8 @@ class ContactService
         if (date('H:i:s') > $time) {
             $this->session->set('contact_time', date('H:i:s', strtotime('+15 minutes')));
         } elseif (date('H:i:s') < $time) {
-            throw new \Exception("You have recently sent a message, please wait");
+            $this->session->setFlash('status', 'You have recently sent a message, please wait!');
+            return null;
         }
 
         // sending a message by mail
@@ -34,6 +35,8 @@ class ContactService
 
         // save message to database
         $this->store($data);
+
+        $this->session->setFlash('status', 'You message successfully sent!');
     }
     
     public function store($data)

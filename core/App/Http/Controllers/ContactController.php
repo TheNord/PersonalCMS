@@ -11,39 +11,39 @@ class ContactController
 {
     protected $view;
     protected $service;
+    protected $session;
 
     public function __construct(\Slim\Container $container) {
         $this->view = $container->get('view');
+        $this->session = $container->get('session');
         $this->service = new ContactService($container);
     }
 
     public function index($request, $response) {
-        return $this->view->render($response, 'app/contact.html.twig');
+        $message = $this->session->getFlash('status');
+        $errors = $this->session->getFlash('errors'); 
+
+        return $this->view->render($response, 'app/contact.html.twig', [
+            'status' => $message,
+            'errors' => $errors
+        ]);
     }
 
     public function send(Request $request, Response $response) {
         $data = $request->getParsedBody();
 
-        // validate data
+        // validate form
         $validation = ContactFormValidation::validate($data);   
 
         if (count($validation) > 0) {
-            return $this->view->render($response, 'app/contact.html.twig', [
-                'errors' => $validation
-            ]);
+            $this->session->setFlash('errors', $validation);
+            return $response->withStatus(302)->withHeader('Location', '/contact');
         }
 
-        try {
-            $this->service->sending($data);
+        // store data in database and send email
+        $this->service->sending($data);
 
-            // need redirect user
-            return $this->view->render($response, 'app/contact.html.twig', [
-                'status' => 'Successfully sent!'
-            ]);
-        } catch (\Exception $e) {
-            return $this->view->render($response, 'app/contact.html.twig', [
-                'errors' => [$e->getMessage()]
-            ]);
-        }
+        // return after all actions
+        return $response->withStatus(302)->withHeader('Location', '/contact');
     }
 }
