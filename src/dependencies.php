@@ -1,7 +1,6 @@
 <?php
-// DIC configuration
 
-use Schnittstabil\Psr7\Csrf\MiddlewareBuilder as CsrfMiddlewareBuilder;
+// DIC configuration
 
 $container = $app->getContainer();
 
@@ -12,29 +11,8 @@ unset($container['notFoundHandler']);
 require __DIR__ . '/configuration/templates.php';
 require __DIR__ . '/configuration/database.php';
 require __DIR__ . '/configuration/mailer.php';
-
-// monolog
-$container['logger'] = function ($c) {
-    $settings = $c->get('settings')['logger'];
-    $logger = new Monolog\Logger($settings['name']);
-    $logger->pushProcessor(new Monolog\Processor\UidProcessor());
-    $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
-    return $logger;
-};
-
-$container['session'] = function ($c) {
-    $session_factory = new \Aura\Session\SessionFactory;
-    $session = $session_factory->newInstance($_SESSION);
-    $segment = $session->getSegment('slim11');
-
-    return $segment;
-};
-
-$container['csrf'] = function ($c) {
-    $key = 'fdtt435ccxgt346h';
-
-    return CsrfMiddlewareBuilder::create($key)
-        ->buildSynchronizerTokenPatternMiddleware();
-};
+require __DIR__ . '/configuration/logger.php';
+require __DIR__ . '/configuration/session.php';
+require __DIR__ . '/configuration/protection.php';
 
 return $container;

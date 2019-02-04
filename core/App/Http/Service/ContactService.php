@@ -21,7 +21,7 @@ class ContactService
         $this->session = $container->get('session');
         $this->view = $container->get('view');
         $this->mailer = $container->get('mailer');
-        $this->adminEmail = $container->get('personal')['email'];
+        $this->adminEmail = $container->get('settings')['email'];
     }
 
     public function sending($data)

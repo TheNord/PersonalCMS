@@ -1,4 +1,5 @@
 <?php
+
 // Application middleware
 
 use App\Http\Middleware;
