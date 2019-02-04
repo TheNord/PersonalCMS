@@ -11,7 +11,7 @@
         <h1>Hello, write us!</h1>
 
         {% if status %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
             {{ status }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -19,12 +19,20 @@
         </div>
         {% endif %}
 
+        {% if errors %}
+        <ul class="list-errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         <form action="{{ path_for('contact_send') }}" method="post">
             {{ csrf_input_widget() }}
 
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Password" name="name">
+                <input type="text" class="form-control" id="name" placeholder="Your name" name="name">
             </div>
 
             <div class="form-group">

@@ -1,5 +1,10 @@
 <?php
 return [
+    // Personal settings
+    'personal' => [
+        'email' => 'test@mail.com'
+    ],
+    // Project settings
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
         'addContentLengthHeader' => false, // Allow the web server to send the content-length header
@@ -42,6 +47,14 @@ return [
                 'password' => 'new-password',
                 'charset' => 'utf8'
             ]
+        ],
+
+        // Mailer settings
+        'mailer' => [
+            'host' => 'smtp.mailtrap.io',
+            'port' => '25',
+            'login' => 'dc58d90f255736',
+            'password' => '623c14b4d24ec3'
         ],
 
         // CSS and JS manifest Mix settings

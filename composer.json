@@ -23,7 +23,10 @@
         "doctrine/migrations": "^2.0",
         "dasprid/container-interop-doctrine": "^1.1",
         "filp/whoops": "^2.3",
-        "schnittstabil/psr7-csrf-middleware": "^1.1"
+        "schnittstabil/psr7-csrf-middleware": "^1.1",
+        "aura/filter": "^2.3",
+        "aura/session": "^2.1",
+        "swiftmailer/swiftmailer": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8 < 6.0",
