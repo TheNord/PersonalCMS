@@ -11,6 +11,7 @@ unset($container['notFoundHandler']);
 
 require __DIR__ . '/configuration/templates.php';
 require __DIR__ . '/configuration/database.php';
+require __DIR__ . '/configuration/mailer.php';
 
 // monolog
 $container['logger'] = function ($c) {
@@ -22,11 +23,11 @@ $container['logger'] = function ($c) {
 };
 
 $container['session'] = function ($c) {
-	$session_factory = new \Aura\Session\SessionFactory;
-	$session = $session_factory->newInstance($_SESSION);
-	$segment = $session->getSegment('slim332rtrggf');
+    $session_factory = new \Aura\Session\SessionFactory;
+    $session = $session_factory->newInstance($_SESSION);
+    $segment = $session->getSegment('slim11');
 
-	return $segment;
+    return $segment;
 };
 
 $container['csrf'] = function ($c) {
