@@ -3,7 +3,7 @@
 use Schnittstabil\Psr7\Csrf\MiddlewareBuilder as CsrfMiddlewareBuilder;
 
 $container['csrf'] = function ($c) {
-    $key = 'fdtt435ccxgt346h';
+    $key = getenv('APP_KEY');
 
     return CsrfMiddlewareBuilder::create($key)
         ->buildSynchronizerTokenPatternMiddleware();

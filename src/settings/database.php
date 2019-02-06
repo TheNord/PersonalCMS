@@ -13,13 +13,12 @@ return [
 
             'connection' => [
                 'driver' => 'pdo_mysql',
-                'host' => 'localhost',
-                'port' => 3306,
-                'dbname' => 'app',
-                'user' => 'root',
-                'password' => 'new-password',
-                'charset' => 'utf8'
-            ]
+                'host' => getenv('DB_HOST'),
+                'port' => getenv('DB_PORT'),
+                'dbname' => getenv('DB_NAME'),
+                'user' => getenv('DB_USER'),
+                'password' => getenv('DB_PASSWORD'),
+            ],
         ],
     ],
 ];
