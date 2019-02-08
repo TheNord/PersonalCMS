@@ -8,37 +8,42 @@ use Doctrine\Common\Cache\FilesystemCache;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\Setup;
+use Psr\Container\ContainerInterface;
 
-// doctrine configuration
-$container[EntityManager::class] = function ($container): EntityManager {
-    $config = Setup::createAnnotationMetadataConfiguration(
-        $container['settings']['doctrine']['metadata_dirs'],
-        $container['settings']['doctrine']['dev_mode']
-    );
+return [
 
-    $config->setMetadataDriverImpl(
-        new AnnotationDriver(
-            new AnnotationReader,
-            $container['settings']['doctrine']['metadata_dirs']
-        )
-    );
+    // doctrine configuration
+    EntityManager::class => function (ContainerInterface $container): EntityManager {
+        $config = Setup::createAnnotationMetadataConfiguration(
+            $container['settings']['doctrine']['metadata_dirs'],
+            $container['settings']['doctrine']['dev_mode']
+        );
 
-    $config->setMetadataCacheImpl(
-        new FilesystemCache(
-            $container['settings']['doctrine']['cache_dir']
-        )
-    );
+        $config->setMetadataDriverImpl(
+            new AnnotationDriver(
+                new AnnotationReader,
+                $container['settings']['doctrine']['metadata_dirs']
+            )
+        );
 
-    return EntityManager::create(
-        $container['settings']['doctrine']['connection'],
-        $config
-    );
-};
+        $config->setMetadataCacheImpl(
+            new FilesystemCache(
+                $container['settings']['doctrine']['cache_dir']
+            )
+        );
 
-// fixture command
-$container[FixtureCommand::class] = function ($c) {
-    return new FixtureCommand(
-        $c->get(EntityManagerInterface::class),
-        'db/fixtures'
-    );
-};
+        return EntityManager::create(
+            $container['settings']['doctrine']['connection'],
+            $config
+        );
+    },
+
+    // fixture command
+    FixtureCommand::class => function (ContainerInterface $container) {
+        return new FixtureCommand(
+            $container->get(EntityManagerInterface::class),
+            'db/fixtures'
+        );
+    },
+
+];

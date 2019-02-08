@@ -1,15 +1,19 @@
 <?php
 
-// mailer configuration
-$container['mailer'] = function ($c) {
-    $settings = $c->get('settings')['mailer'];
+use Psr\Container\ContainerInterface;
 
-    $transport = (new Swift_SmtpTransport($settings['host'], $settings['port']))
-        ->setUsername($settings['login'])
-        ->setPassword($settings['password'])
-    ;
+return [
+	// mailer configuration
+	'mailer' => function (ContainerInterface $container) {
+	    $settings = $container->get('settings')['mailer'];
 
-    $mailer = new Swift_Mailer($transport);
+	    $transport = (new Swift_SmtpTransport($settings['host'], $settings['port']))
+	        ->setUsername($settings['login'])
+	        ->setPassword($settings['password'])
+	    ;
 
-    return $mailer;
-};
+	    $mailer = new Swift_Mailer($transport);
+
+	    return $mailer;
+	},
+];

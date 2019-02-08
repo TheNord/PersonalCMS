@@ -4,6 +4,7 @@ namespace Framework\Templates\Extensions;
 
 use Aura\Session\Segment as Session;
 use Twig_Extension;
+use Twig_Function;
 use Twig_SimpleFunction;
 
 class FlashExtension extends Twig_Extension
@@ -40,7 +41,9 @@ class FlashExtension extends Twig_Extension
      */
     public function getFunctions()
     {
-        return new Twig_SimpleFunction('flash', [$this, 'getMessages']);
+        return [
+            new Twig_Function('flash', [$this, 'getMessages'])
+        ];
     }
 
     /**

@@ -2,6 +2,12 @@
 
 return [
     'settings' => [
+        // Global templates settings
+        'templates' => [
+            // template file extension
+            'extension' => '.html.twig'
+        ],
+
         // Renderer settings
         'renderer' => [
             'template_path' => 'templates',

@@ -15,7 +15,7 @@ $app = new \Slim\App($settings);
 /**
  * @var \Psr\Container\ContainerInterface $container
  */
-$container = require 'src/dependencies.php';
+$container = require 'src/container.php';
 
 $cli = new Application('Application console');
 

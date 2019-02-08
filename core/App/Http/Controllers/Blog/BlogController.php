@@ -2,31 +2,30 @@
 
 namespace App\Http\Controllers\Blog;
 
-
-
 use App\ReadModel\Pagination;
 use App\ReadModel\PostReadRepository;
+use Psr\Container\ContainerInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Slim\Exception\NotFoundException;
 
 class BlogController
 {
     private const PER_PAGE = 5;
 
-    protected $view;
     protected $posts;
 
-    public function __construct(\Slim\Container $container) {
-        $this->view = $container->get('view');
+    public function __construct(ContainerInterface $container) {
         $this->posts = new PostReadRepository($container);
     }
 
-    public function index($request, $response) {
+    public function index(RequestInterface $request, ResponseInterface $response) {
         $pager = new Pagination(
-        // получаем общее количество постов
+            // get total posts count
             $this->posts->countAll(),
-            // получаем из реквеста атрибут page
+            // get current number page
             $request->getAttribute('page') ?: 1,
-            // задаем число записей на странице
+            // posts per page
             self::PER_PAGE
         );
 
@@ -35,20 +34,19 @@ class BlogController
             $pager->getLimit()
         );
 
-        return $this->view->render($response, 'app/blog/index.html.twig', [
+        return view('app/blog/index', [
             'posts' => $posts,
             'pager' => $pager,
         ]);
     }
 
-
-    public function show($request, $response)
+    public function show(RequestInterface $request, ResponseInterface $response)
     {
         if (!$post = $this->posts->find($request->getAttribute('id'))) {
             throw new NotFoundException($request, $response);
         }
 
-        return $this->view->render($response, 'app/blog/show.html.twig', [
+        return view('app/blog/show', [
             'post' => $post
         ]);
     }

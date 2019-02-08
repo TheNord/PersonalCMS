@@ -2,17 +2,13 @@
 
 // DIC configuration
 
-$container = $app->getContainer();
+$configuration = array_map(
+    function ($file) {
+        return require $file;
+    },
+    glob(__DIR__ . '/configuration/{{,*.}}php', GLOB_BRACE)
+);
 
-unset($container['errorHandler']);
-unset($container['phpErrorHandler']);
-unset($container['notFoundHandler']);
+$dependencies = array_merge_recursive(...$configuration);
 
-require __DIR__ . '/configuration/templates.php';
-require __DIR__ . '/configuration/database.php';
-require __DIR__ . '/configuration/mailer.php';
-require __DIR__ . '/configuration/logger.php';
-require __DIR__ . '/configuration/session.php';
-require __DIR__ . '/configuration/protection.php';
-
-return $container;
+return $dependencies;
