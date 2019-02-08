@@ -20,13 +20,7 @@ class ContactController
     }
 
     public function index($request, $response) {
-        $message = $this->session->getFlash('status');
-        $errors = $this->session->getFlash('errors'); 
-
-        return $this->view->render($response, 'app/contact.html.twig', [
-            'status' => $message,
-            'errors' => $errors
-        ]);
+        return $this->view->render($response, 'app/contact.html.twig');
     }
 
     public function send(Request $request, Response $response) {

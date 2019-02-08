@@ -3,6 +3,7 @@
 
 use Framework\Templates\Extensions\CsrfExtension;
 use Stormiix\Twig\Extension\MixExtension;
+use Framework\Templates\Extensions\FlashExtension;
 
 // view renderer
 $container['renderer'] = function ($c) {
@@ -27,6 +28,9 @@ $container['view'] = function ($c) {
     // Added mix extension
     $view->addExtension($c->get(MixExtension::class));
 
+    // Added flash extension
+    $view->addExtension($c->get(FlashExtension::class));
+
     // CSRF Protection
     $view->addExtension(new CsrfExtension(
         [$c['csrf']->getTokenService(), 'generate']
@@ -43,4 +47,10 @@ $container[MixExtension::class] = function ($c) {
         $config['root'],
         $config['manifest']
     );
+};
+
+// configure flash extension
+$container[FlashExtension::class] = function ($c) {
+    $session = $c->get('session');
+    return new FlashExtension($session);
 };

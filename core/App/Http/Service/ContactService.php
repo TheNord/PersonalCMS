@@ -35,7 +35,7 @@ class ContactService
             $this->session->setFlash('status', 'You have recently sent a message, please wait!');
             return null;
         }
-
+        
         // sending a message by mail
         $this->sendMail($data);
 

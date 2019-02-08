@@ -10,18 +10,18 @@
     <div class="jumbotron">
         <h1>Hello, write us!</h1>
 
-        {% if status %}
+        {% if flash('status') %}
         <div class="alert alert-info alert-dismissible fade show" role="alert">
-            {{ status }}
+            {{ flash('status') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         {% endif %}
 
-        {% if errors %}
+        {% if flash('errors') %}
         <ul class="list-errors">
-            {% for error in errors %}
+            {% for error in flash('errors') %}
                 <li>{{ error }}</li>
             {% endfor %}
         </ul>
