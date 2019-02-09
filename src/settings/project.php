@@ -7,5 +7,6 @@ return [
         'debug' => (bool)getenv('APP_DEBUG'), // set to false in production
 
         'email' => getenv('MAIL_ADMIN'),
+        'email_from' => getenv('MAIL_FROM'),
     ],
 ];
