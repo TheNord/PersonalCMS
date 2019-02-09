@@ -75,7 +75,7 @@ class User implements AggregateRoot
         $this->confirmToken->validate($token, $date);
         $this->status = self::STATUS_ACTIVE;
         $this->confirmToken = null;
-        $this->recordEvent(new UserConfirmed($this->id));
+        //$this->recordEvent(new UserConfirmed($this->id));
     }
 
     public function isWait(): bool
