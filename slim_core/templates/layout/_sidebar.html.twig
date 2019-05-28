@@ -1,0 +1,14 @@
+<ul class="sidebar-menu">
+    <li class="header">ОСНОВНАЯ НАВИГАЦИЯ</li>
+    <li class="{{ page is same as('dashboard') ? ' active' : '' }}">
+        <a href="{{ path_for('dashboard') }}"><i class="fa fa-dashboard"></i>
+        <span>Администрационная</span></a>
+    </li>
+
+    <li class="{{ page is same as('pages') ? 'active' : '' }}"><a href="{{ path_for('pages') }}"><i class="fa fa-pencil-square-o"></i> <span>Управление страницами</span></a></li>
+
+
+    <li class="{{ page is same as('news') ? 'active' : '' }}"><a href="{{ path_for('dashboard') }}"><i class="fa fa-newspaper-o"></i> <span>Заявки пользователей</span></a></li>
+
+    <li class="{{ page is same as('uploads') ? 'active' : '' }}"><a href="{{ path_for('dashboard') }}"><i class="fa fa-cloud-upload"></i> <span>Файлы и изображения</span></a></li>
+</ul>

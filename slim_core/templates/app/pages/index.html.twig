@@ -1,0 +1,51 @@
+{% extends 'layout/app.html.twig' %}
+
+{% set page = 'pages' %}
+
+{% block title %}Управление страницами
+{% endblock %}
+
+{% block content %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Управление страницами
+            </h1>
+        </section>
+
+        <section
+            class="content">
+
+            <!-- Default box -->
+            <div class="box">
+                <div class="box-body">
+                    <p>Выберите необходимую страницу для редактирования</p>
+
+                    <div class="row" style="padding-top: 25px">
+                        <div class="col-md-3">
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>Главная</h3>
+
+                                    <p><a href="http://{{ host }}/" style="color: #ffffff">Открыть страницу</a></p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-files-o"></i>
+                                </div>
+                                <a class="small-box-footer" href="{{ path_for('pages.home') }}">Перейти к редактированию
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-footer-->
+            </div>
+            <!-- /.box -->
+
+        </section>
+
+    </div>
+{% endblock %}
