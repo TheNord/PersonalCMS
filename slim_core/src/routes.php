@@ -22,6 +22,10 @@ $app->group('/utils', function () use ($app) {
 
 $app->group('', function () use ($app) {
     $app->get('/', 'App\Http\Controllers\DashboardController:dashboard')->setName('dashboard')->add(AuthMiddleware::class);
+
     $app->get('/pages', 'App\Http\Controllers\PageController:index')->setName('pages');
-    $app->get('/pages/home', 'App\Http\Controllers\PageController:editHome')->setName('pages.home');
+    $app->get('/pages/{page}/edit', 'App\Http\Controllers\PageController:edit')->setName('pages.edit');
+    $app->get('/pages/{page}/edit/start', 'App\Http\Controllers\PageController:editStart')->setName('pages.edit.start');
+
+    $app->post('/pages/{page}/edit/save', 'App\Http\Controllers\PageController:store');
 })->add(AuthMiddleware::class);

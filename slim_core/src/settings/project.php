@@ -8,5 +8,7 @@ return [
 
         'email' => getenv('MAIL_ADMIN'),
         'email_from' => getenv('MAIL_FROM'),
+
+        'root_folder' => __DIR__ . '/../../'
     ],
 ];

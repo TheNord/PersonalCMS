@@ -1,0 +1,70 @@
+{{ pageContent | raw }}
+
+<div class="editing_modal">
+    <button class="btn_editing btn_editing_cancel">Отменить</button>
+    <button class="btn_editing btn_editing_save">Сохранить</button>
+</div>
+
+<style>
+    .editing_modal {
+        position: fixed;
+        bottom: 15px;
+        z-index: 999999;
+    }
+
+    .btn_editing {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        margin-left: 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .btn_editing_save {
+        background-color: #4CAF50; /* Green */
+    }
+
+    .btn_editing_save:hover {
+        background-color: #4aa34a; /* Green */
+    }
+
+    .btn_editing_cancel {
+        background-color: #f44336; /* Red */
+    }
+
+    .btn_editing_cancel:hover {
+        background-color: #c2332a; /* Red */
+    }
+</style>
+
+{% if session('editing') %}
+    <script src="/build{{ Mix('/js/admin/dependencies.js') }}"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-rc.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-rc.1/js/froala_editor.pkgd.min.js"></script>
+
+    <script>
+        const Froala = new FroalaEditor('div#introduction', {
+            toolbarInline: true,
+            charCounterCount: false
+        });
+        
+        let btnSave = document.querySelector('.btn_editing_save');
+        let btnCancel = document.querySelector('.btn_editing_cancel');
+
+        let path = location.pathname.split('/');
+        let page = path[2];
+
+        btnSave.addEventListener('click', function () {
+            axios
+                .post(`/pages/${page}/edit/save`, {
+                    content: Froala.html.get()
+                })
+                .then(res => console.log(res.data))
+                .catch(error => console.log(error))
+        })
+    </script>
+{% endif %}

@@ -2,7 +2,7 @@
 
 
 use Framework\Templates\Extensions\AuthExtension;
-use Framework\Templates\Extensions\CsrfExtension;
+use Framework\Templates\Extensions\SessionExtension;
 use Psr\Container\ContainerInterface;
 use Stormiix\Twig\Extension\MixExtension;
 use Framework\Templates\Extensions\FlashExtension;
@@ -34,13 +34,11 @@ return [
         // Added flash extension
         $view->addExtension($container->get(FlashExtension::class));
 
+        // Added session extension
+        $view->addExtension($container->get(SessionExtension::class));
+
         // Added authentication helper extension
         $view->addExtension($container->get(AuthExtension::class));
-
-        // CSRF Protection
-        $view->addExtension(new CsrfExtension(
-            [$container['csrf']->getTokenService(), 'generate']
-        ));
 
         return $view;
     },
@@ -53,6 +51,12 @@ return [
             $config['root'],
             $config['manifest']
         );
+    },
+
+    // configure session extension
+    SessionExtension::class => function ($container) {
+        $session = $container->get('session');
+        return new SessionExtension($session);
     },
 
     // configure flash extension

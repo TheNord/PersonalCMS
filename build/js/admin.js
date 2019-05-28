@@ -73,7 +73,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "div.dataTables_length label {\r\n\tfont-weight: normal;\r\n\ttext-align: left;\r\n\twhite-space: nowrap;\r\n}\r\n\r\ndiv.dataTables_length select {\r\n\twidth: 75px;\r\n\tdisplay: inline-block;\r\n}\r\n\r\ndiv.dataTables_filter {\r\n\ttext-align: right;\r\n}\r\n\r\ndiv.dataTables_filter label {\r\n\tfont-weight: normal;\r\n\twhite-space: nowrap;\r\n\ttext-align: left;\r\n}\r\n\r\ndiv.dataTables_filter input {\r\n\tmargin-left: 0.5em;\r\n\tdisplay: inline-block;\r\n\twidth: auto;\r\n}\r\n\r\ndiv.dataTables_info {\r\n\tpadding-top: 8px;\r\n\twhite-space: nowrap;\r\n}\r\n\r\ndiv.dataTables_paginate {\r\n\tmargin: 0;\r\n\twhite-space: nowrap;\r\n\ttext-align: right;\r\n}\r\n\r\ndiv.dataTables_paginate ul.pagination {\r\n\tmargin: 2px 0;\r\n\twhite-space: nowrap;\r\n}\r\n\r\n@media screen and (max-width: 767px) {\r\n\tdiv.dataTables_wrapper > div.row > div,\r\n\tdiv.dataTables_length,\r\n\tdiv.dataTables_filter,\r\n\tdiv.dataTables_info,\r\n\tdiv.dataTables_paginate {\r\n\t\ttext-align: center;\r\n\t}\r\n\r\n\tdiv.DTTT {\r\n\t\tmargin-bottom: 0.5em;\r\n\t}\r\n}\r\n\r\n\r\ntable.dataTable td,\r\ntable.dataTable th {\r\n\t-webkit-box-sizing: content-box;\r\n\t-moz-box-sizing: content-box;\r\n\tbox-sizing: content-box;\r\n}\r\n\r\n\r\ntable.dataTable {\r\n\tclear: both;\r\n\tmargin-top: 6px !important;\r\n\tmargin-bottom: 6px !important;\r\n\tmax-width: none !important;\r\n}\r\n\r\ntable.dataTable thead .sorting,\r\ntable.dataTable thead .sorting_asc,\r\ntable.dataTable thead .sorting_desc,\r\ntable.dataTable thead .sorting_asc_disabled,\r\ntable.dataTable thead .sorting_desc_disabled {\r\n\tcursor: pointer;\r\n\tposition: relative;\r\n}\r\n\r\ntable.dataTable thead .sorting:after,\r\ntable.dataTable thead .sorting_asc:after,\r\ntable.dataTable thead .sorting_desc:after {\r\n\tposition: absolute;\r\n\ttop: 8px;\r\n\tright: 8px;\r\n\tdisplay: block;\r\n\tfont-family: 'Glyphicons Halflings';\r\n\topacity: 0.5;\r\n}\r\ntable.dataTable thead .sorting:after {\r\n\topacity: 0.2;\r\n\tcontent: \"\\E150\"; /* sort */\r\n}\r\ntable.dataTable thead .sorting_asc:after {\r\n\tcontent: \"\\E155\"; /* sort-by-attributes */\r\n}\r\ntable.dataTable thead .sorting_desc:after {\r\n\tcontent: \"\\E156\"; /* sort-by-attributes-alt */\r\n}\r\ndiv.dataTables_scrollBody table.dataTable thead .sorting:after,\r\ndiv.dataTables_scrollBody table.dataTable thead .sorting_asc:after,\r\ndiv.dataTables_scrollBody table.dataTable thead .sorting_desc:after {\r\n\tdisplay: none;\r\n}\r\n\r\ntable.dataTable thead .sorting_asc_disabled:after,\r\ntable.dataTable thead .sorting_desc_disabled:after {\r\n\tcolor: #eee;\r\n}\r\n\r\ntable.dataTable thead > tr > th {\r\n\tpadding-right: 30px;\r\n}\r\n\r\ntable.dataTable th:active {\r\n\toutline: none;\r\n}\r\n\r\n\r\n/* Condensed */\r\ntable.dataTable.table-condensed thead > tr > th {\r\n\tpadding-right: 20px;\r\n}\r\n\r\ntable.dataTable.table-condensed thead .sorting:after,\r\ntable.dataTable.table-condensed thead .sorting_asc:after,\r\ntable.dataTable.table-condensed thead .sorting_desc:after {\r\n\ttop: 6px;\r\n\tright: 6px;\r\n}\r\n\r\n/* Scrolling */\r\ndiv.dataTables_scrollHead table {\r\n\tmargin-bottom: 0 !important;\r\n\tborder-bottom-left-radius: 0;\r\n\tborder-bottom-right-radius: 0;\r\n}\r\n\r\ndiv.dataTables_scrollHead table thead tr:last-child th:first-child,\r\ndiv.dataTables_scrollHead table thead tr:last-child td:first-child {\r\n\tborder-bottom-left-radius: 0 !important;\r\n\tborder-bottom-right-radius: 0 !important;\r\n}\r\n\r\ndiv.dataTables_scrollBody table {\r\n\tborder-top: none;\r\n\tmargin-top: 0 !important;\r\n\tmargin-bottom: 0 !important;\r\n}\r\n\r\ndiv.dataTables_scrollBody tbody tr:first-child th,\r\ndiv.dataTables_scrollBody tbody tr:first-child td {\r\n\tborder-top: none;\r\n}\r\n\r\ndiv.dataTables_scrollFoot table {\r\n\tmargin-top: 0 !important;\r\n\tborder-top: none;\r\n}\r\n\r\n/* Frustratingly the border-collapse:collapse used by Bootstrap makes the column\r\n   width calculations when using scrolling impossible to align columns. We have\r\n   to use separate\r\n */\r\ntable.table-bordered.dataTable {\r\n\tborder-collapse: separate !important;\r\n}\r\ntable.table-bordered thead th,\r\ntable.table-bordered thead td {\r\n\tborder-left-width: 0;\r\n\tborder-top-width: 0;\r\n}\r\ntable.table-bordered tbody th,\r\ntable.table-bordered tbody td {\r\n\tborder-left-width: 0;\r\n\tborder-bottom-width: 0;\r\n}\r\ntable.table-bordered tfoot th,\r\ntable.table-bordered tfoot td {\r\n    border-left-width: 0;\r\n    border-bottom-width: 0;\r\n}\r\ntable.table-bordered th:last-child,\r\ntable.table-bordered td:last-child {\r\n\tborder-right-width: 0;\r\n}\r\ndiv.dataTables_scrollHead table.table-bordered {\r\n\tborder-bottom-width: 0;\r\n}\r\n\r\n\r\n\r\n\r\n/*\r\n * TableTools styles\r\n */\r\n.table.dataTable tbody tr.active td,\r\n.table.dataTable tbody tr.active th {\r\n\tbackground-color: #08C;\r\n\tcolor: white;\r\n}\r\n\r\n.table.dataTable tbody tr.active:hover td,\r\n.table.dataTable tbody tr.active:hover th {\r\n\tbackground-color: #0075b0 !important;\r\n}\r\n\r\n.table.dataTable tbody tr.active th > a,\r\n.table.dataTable tbody tr.active td > a {\r\n\tcolor: white;\r\n}\r\n\r\n.table-striped.dataTable tbody tr.active:nth-child(odd) td,\r\n.table-striped.dataTable tbody tr.active:nth-child(odd) th {\r\n\tbackground-color: #017ebc;\r\n}\r\n\r\ntable.DTTT_selectable tbody tr {\r\n\tcursor: pointer;\r\n}\r\n\r\ndiv.DTTT .btn:hover {\r\n\ttext-decoration: none !important;\r\n}\r\n\r\nul.DTTT_dropdown.dropdown-menu {\r\n  z-index: 2003;\r\n}\r\n\r\nul.DTTT_dropdown.dropdown-menu a {\r\n\tcolor: #333 !important; /* needed only when demo_page.css is included */\r\n}\r\n\r\nul.DTTT_dropdown.dropdown-menu li {\r\n\tposition: relative;\r\n}\r\n\r\nul.DTTT_dropdown.dropdown-menu li:hover a {\r\n\tbackground-color: #0088cc;\r\n\tcolor: white !important;\r\n}\r\n\r\ndiv.DTTT_collection_background {\r\n\tz-index: 2002;\t\r\n}\r\n\r\n/* TableTools information display */\r\ndiv.DTTT_print_info {\r\n\tposition: fixed;\r\n\ttop: 50%;\r\n\tleft: 50%;\r\n\twidth: 400px;\r\n\theight: 150px;\r\n\tmargin-left: -200px;\r\n\tmargin-top: -75px;\r\n\ttext-align: center;\r\n\tcolor: #333;\r\n\tpadding: 10px 30px;\r\n\topacity: 0.95;\r\n\r\n\tbackground-color: white;\r\n\tborder: 1px solid rgba(0, 0, 0, 0.2);\r\n\tborder-radius: 6px;\r\n\t\r\n\t-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);\r\n\t        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\ndiv.DTTT_print_info h6 {\r\n\tfont-weight: normal;\r\n\tfont-size: 28px;\r\n\tline-height: 28px;\r\n\tmargin: 1em;\r\n}\r\n\r\ndiv.DTTT_print_info p {\r\n\tfont-size: 14px;\r\n\tline-height: 20px;\r\n}\r\n\r\ndiv.dataTables_processing {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    width: 100%;\r\n    height: 60px;\r\n    margin-left: -50%;\r\n    margin-top: -25px;\r\n    padding-top: 20px;\r\n    padding-bottom: 20px;\r\n    text-align: center;\r\n    font-size: 1.2em;\r\n    background-color: white;\r\n    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(25%, rgba(255,255,255,0.9)), color-stop(75%, rgba(255,255,255,0.9)), color-stop(100%, rgba(255,255,255,0)));\r\n    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\r\n    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\r\n    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\r\n    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\r\n    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\r\n}\r\n\r\n\r\n\r\n/*\r\n * FixedColumns styles\r\n */\r\ndiv.DTFC_LeftHeadWrapper table,\r\ndiv.DTFC_LeftFootWrapper table,\r\ndiv.DTFC_RightHeadWrapper table,\r\ndiv.DTFC_RightFootWrapper table,\r\ntable.DTFC_Cloned tr.even {\r\n    background-color: white;\r\n    margin-bottom: 0;\r\n}\r\n \r\ndiv.DTFC_RightHeadWrapper table ,\r\ndiv.DTFC_LeftHeadWrapper table {\r\n\tborder-bottom: none !important;\r\n    margin-bottom: 0 !important;\r\n    border-top-right-radius: 0 !important;\r\n    border-bottom-left-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n}\r\n \r\ndiv.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,\r\ndiv.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,\r\ndiv.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,\r\ndiv.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {\r\n    border-bottom-left-radius: 0 !important;\r\n    border-bottom-right-radius: 0 !important;\r\n}\r\n \r\ndiv.DTFC_RightBodyWrapper table,\r\ndiv.DTFC_LeftBodyWrapper table {\r\n    border-top: none;\r\n    margin: 0 !important;\r\n}\r\n \r\ndiv.DTFC_RightBodyWrapper tbody tr:first-child th,\r\ndiv.DTFC_RightBodyWrapper tbody tr:first-child td,\r\ndiv.DTFC_LeftBodyWrapper tbody tr:first-child th,\r\ndiv.DTFC_LeftBodyWrapper tbody tr:first-child td {\r\n    border-top: none;\r\n}\r\n \r\ndiv.DTFC_RightFootWrapper table,\r\ndiv.DTFC_LeftFootWrapper table {\r\n    border-top: none;\r\n    margin-top: 0 !important;\r\n}\r\n\r\n\r\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting:after,\r\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting_asc:after,\r\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting_desc:after,\r\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting:after,\r\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting_asc:after,\r\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting_desc:after {\r\n\tdisplay: none;\r\n}\r\n\r\n\r\n/*\r\n * FixedHeader styles\r\n */\r\ndiv.FixedHeader_Cloned table {\r\n\tmargin: 0 !important\r\n}\r\n\r\n", ""]);
+exports.push([module.i, "div.dataTables_length label {\n\tfont-weight: normal;\n\ttext-align: left;\n\twhite-space: nowrap;\n}\n\ndiv.dataTables_length select {\n\twidth: 75px;\n\tdisplay: inline-block;\n}\n\ndiv.dataTables_filter {\n\ttext-align: right;\n}\n\ndiv.dataTables_filter label {\n\tfont-weight: normal;\n\twhite-space: nowrap;\n\ttext-align: left;\n}\n\ndiv.dataTables_filter input {\n\tmargin-left: 0.5em;\n\tdisplay: inline-block;\n\twidth: auto;\n}\n\ndiv.dataTables_info {\n\tpadding-top: 8px;\n\twhite-space: nowrap;\n}\n\ndiv.dataTables_paginate {\n\tmargin: 0;\n\twhite-space: nowrap;\n\ttext-align: right;\n}\n\ndiv.dataTables_paginate ul.pagination {\n\tmargin: 2px 0;\n\twhite-space: nowrap;\n}\n\n@media screen and (max-width: 767px) {\n\tdiv.dataTables_wrapper > div.row > div,\n\tdiv.dataTables_length,\n\tdiv.dataTables_filter,\n\tdiv.dataTables_info,\n\tdiv.dataTables_paginate {\n\t\ttext-align: center;\n\t}\n\n\tdiv.DTTT {\n\t\tmargin-bottom: 0.5em;\n\t}\n}\n\n\ntable.dataTable td,\ntable.dataTable th {\n\t-webkit-box-sizing: content-box;\n\t-moz-box-sizing: content-box;\n\tbox-sizing: content-box;\n}\n\n\ntable.dataTable {\n\tclear: both;\n\tmargin-top: 6px !important;\n\tmargin-bottom: 6px !important;\n\tmax-width: none !important;\n}\n\ntable.dataTable thead .sorting,\ntable.dataTable thead .sorting_asc,\ntable.dataTable thead .sorting_desc,\ntable.dataTable thead .sorting_asc_disabled,\ntable.dataTable thead .sorting_desc_disabled {\n\tcursor: pointer;\n\tposition: relative;\n}\n\ntable.dataTable thead .sorting:after,\ntable.dataTable thead .sorting_asc:after,\ntable.dataTable thead .sorting_desc:after {\n\tposition: absolute;\n\ttop: 8px;\n\tright: 8px;\n\tdisplay: block;\n\tfont-family: 'Glyphicons Halflings';\n\topacity: 0.5;\n}\ntable.dataTable thead .sorting:after {\n\topacity: 0.2;\n\tcontent: \"\\E150\"; /* sort */\n}\ntable.dataTable thead .sorting_asc:after {\n\tcontent: \"\\E155\"; /* sort-by-attributes */\n}\ntable.dataTable thead .sorting_desc:after {\n\tcontent: \"\\E156\"; /* sort-by-attributes-alt */\n}\ndiv.dataTables_scrollBody table.dataTable thead .sorting:after,\ndiv.dataTables_scrollBody table.dataTable thead .sorting_asc:after,\ndiv.dataTables_scrollBody table.dataTable thead .sorting_desc:after {\n\tdisplay: none;\n}\n\ntable.dataTable thead .sorting_asc_disabled:after,\ntable.dataTable thead .sorting_desc_disabled:after {\n\tcolor: #eee;\n}\n\ntable.dataTable thead > tr > th {\n\tpadding-right: 30px;\n}\n\ntable.dataTable th:active {\n\toutline: none;\n}\n\n\n/* Condensed */\ntable.dataTable.table-condensed thead > tr > th {\n\tpadding-right: 20px;\n}\n\ntable.dataTable.table-condensed thead .sorting:after,\ntable.dataTable.table-condensed thead .sorting_asc:after,\ntable.dataTable.table-condensed thead .sorting_desc:after {\n\ttop: 6px;\n\tright: 6px;\n}\n\n/* Scrolling */\ndiv.dataTables_scrollHead table {\n\tmargin-bottom: 0 !important;\n\tborder-bottom-left-radius: 0;\n\tborder-bottom-right-radius: 0;\n}\n\ndiv.dataTables_scrollHead table thead tr:last-child th:first-child,\ndiv.dataTables_scrollHead table thead tr:last-child td:first-child {\n\tborder-bottom-left-radius: 0 !important;\n\tborder-bottom-right-radius: 0 !important;\n}\n\ndiv.dataTables_scrollBody table {\n\tborder-top: none;\n\tmargin-top: 0 !important;\n\tmargin-bottom: 0 !important;\n}\n\ndiv.dataTables_scrollBody tbody tr:first-child th,\ndiv.dataTables_scrollBody tbody tr:first-child td {\n\tborder-top: none;\n}\n\ndiv.dataTables_scrollFoot table {\n\tmargin-top: 0 !important;\n\tborder-top: none;\n}\n\n/* Frustratingly the border-collapse:collapse used by Bootstrap makes the column\n   width calculations when using scrolling impossible to align columns. We have\n   to use separate\n */\ntable.table-bordered.dataTable {\n\tborder-collapse: separate !important;\n}\ntable.table-bordered thead th,\ntable.table-bordered thead td {\n\tborder-left-width: 0;\n\tborder-top-width: 0;\n}\ntable.table-bordered tbody th,\ntable.table-bordered tbody td {\n\tborder-left-width: 0;\n\tborder-bottom-width: 0;\n}\ntable.table-bordered tfoot th,\ntable.table-bordered tfoot td {\n    border-left-width: 0;\n    border-bottom-width: 0;\n}\ntable.table-bordered th:last-child,\ntable.table-bordered td:last-child {\n\tborder-right-width: 0;\n}\ndiv.dataTables_scrollHead table.table-bordered {\n\tborder-bottom-width: 0;\n}\n\n\n\n\n/*\n * TableTools styles\n */\n.table.dataTable tbody tr.active td,\n.table.dataTable tbody tr.active th {\n\tbackground-color: #08C;\n\tcolor: white;\n}\n\n.table.dataTable tbody tr.active:hover td,\n.table.dataTable tbody tr.active:hover th {\n\tbackground-color: #0075b0 !important;\n}\n\n.table.dataTable tbody tr.active th > a,\n.table.dataTable tbody tr.active td > a {\n\tcolor: white;\n}\n\n.table-striped.dataTable tbody tr.active:nth-child(odd) td,\n.table-striped.dataTable tbody tr.active:nth-child(odd) th {\n\tbackground-color: #017ebc;\n}\n\ntable.DTTT_selectable tbody tr {\n\tcursor: pointer;\n}\n\ndiv.DTTT .btn:hover {\n\ttext-decoration: none !important;\n}\n\nul.DTTT_dropdown.dropdown-menu {\n  z-index: 2003;\n}\n\nul.DTTT_dropdown.dropdown-menu a {\n\tcolor: #333 !important; /* needed only when demo_page.css is included */\n}\n\nul.DTTT_dropdown.dropdown-menu li {\n\tposition: relative;\n}\n\nul.DTTT_dropdown.dropdown-menu li:hover a {\n\tbackground-color: #0088cc;\n\tcolor: white !important;\n}\n\ndiv.DTTT_collection_background {\n\tz-index: 2002;\t\n}\n\n/* TableTools information display */\ndiv.DTTT_print_info {\n\tposition: fixed;\n\ttop: 50%;\n\tleft: 50%;\n\twidth: 400px;\n\theight: 150px;\n\tmargin-left: -200px;\n\tmargin-top: -75px;\n\ttext-align: center;\n\tcolor: #333;\n\tpadding: 10px 30px;\n\topacity: 0.95;\n\n\tbackground-color: white;\n\tborder: 1px solid rgba(0, 0, 0, 0.2);\n\tborder-radius: 6px;\n\t\n\t-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);\n\t        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);\n}\n\ndiv.DTTT_print_info h6 {\n\tfont-weight: normal;\n\tfont-size: 28px;\n\tline-height: 28px;\n\tmargin: 1em;\n}\n\ndiv.DTTT_print_info p {\n\tfont-size: 14px;\n\tline-height: 20px;\n}\n\ndiv.dataTables_processing {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    width: 100%;\n    height: 60px;\n    margin-left: -50%;\n    margin-top: -25px;\n    padding-top: 20px;\n    padding-bottom: 20px;\n    text-align: center;\n    font-size: 1.2em;\n    background-color: white;\n    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(25%, rgba(255,255,255,0.9)), color-stop(75%, rgba(255,255,255,0.9)), color-stop(100%, rgba(255,255,255,0)));\n    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\n    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\n    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\n    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\n    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);\n}\n\n\n\n/*\n * FixedColumns styles\n */\ndiv.DTFC_LeftHeadWrapper table,\ndiv.DTFC_LeftFootWrapper table,\ndiv.DTFC_RightHeadWrapper table,\ndiv.DTFC_RightFootWrapper table,\ntable.DTFC_Cloned tr.even {\n    background-color: white;\n    margin-bottom: 0;\n}\n \ndiv.DTFC_RightHeadWrapper table ,\ndiv.DTFC_LeftHeadWrapper table {\n\tborder-bottom: none !important;\n    margin-bottom: 0 !important;\n    border-top-right-radius: 0 !important;\n    border-bottom-left-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n}\n \ndiv.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,\ndiv.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,\ndiv.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,\ndiv.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {\n    border-bottom-left-radius: 0 !important;\n    border-bottom-right-radius: 0 !important;\n}\n \ndiv.DTFC_RightBodyWrapper table,\ndiv.DTFC_LeftBodyWrapper table {\n    border-top: none;\n    margin: 0 !important;\n}\n \ndiv.DTFC_RightBodyWrapper tbody tr:first-child th,\ndiv.DTFC_RightBodyWrapper tbody tr:first-child td,\ndiv.DTFC_LeftBodyWrapper tbody tr:first-child th,\ndiv.DTFC_LeftBodyWrapper tbody tr:first-child td {\n    border-top: none;\n}\n \ndiv.DTFC_RightFootWrapper table,\ndiv.DTFC_LeftFootWrapper table {\n    border-top: none;\n    margin-top: 0 !important;\n}\n\n\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting:after,\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting_asc:after,\ndiv.DTFC_LeftBodyWrapper table.dataTable thead .sorting_desc:after,\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting:after,\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting_asc:after,\ndiv.DTFC_RightBodyWrapper table.dataTable thead .sorting_desc:after {\n\tdisplay: none;\n}\n\n\n/*\n * FixedHeader styles\n */\ndiv.FixedHeader_Cloned table {\n\tmargin: 0 !important\n}\n\n", ""]);
 
 // exports
 
@@ -167,7 +167,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.3.1
+ * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -177,7 +177,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2018-01-20T17:24Z
+ * Date: 2019-05-01T21:04Z
  */
 ( function( global, factory ) {
 
@@ -259,20 +259,33 @@ var isWindow = function isWindow( obj ) {
 	var preservedScriptAttributes = {
 		type: true,
 		src: true,
+		nonce: true,
 		noModule: true
 	};
 
-	function DOMEval( code, doc, node ) {
+	function DOMEval( code, node, doc ) {
 		doc = doc || document;
 
-		var i,
+		var i, val,
 			script = doc.createElement( "script" );
 
 		script.text = code;
 		if ( node ) {
 			for ( i in preservedScriptAttributes ) {
-				if ( node[ i ] ) {
-					script[ i ] = node[ i ];
+
+				// Support: Firefox 64+, Edge 18+
+				// Some browsers don't support the "nonce" property on scripts.
+				// On the other hand, just using `getAttribute` is not enough as
+				// the `nonce` attribute is reset to an empty string whenever it
+				// becomes browsing-context connected.
+				// See https://github.com/whatwg/html/issues/2369
+				// See https://html.spec.whatwg.org/#nonce-attributes
+				// The `node.getAttribute` check was added for the sake of
+				// `jQuery.globalEval` so that it can fake a nonce-containing node
+				// via an object.
+				val = node[ i ] || node.getAttribute && node.getAttribute( i );
+				if ( val ) {
+					script.setAttribute( i, val );
 				}
 			}
 		}
@@ -297,7 +310,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.3.1",
+	version = "3.4.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -426,25 +439,28 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 			// Extend the base object
 			for ( name in options ) {
-				src = target[ name ];
 				copy = options[ name ];
 
+				// Prevent Object.prototype pollution
 				// Prevent never-ending loop
-				if ( target === copy ) {
+				if ( name === "__proto__" || target === copy ) {
 					continue;
 				}
 
 				// Recurse if we're merging plain objects or arrays
 				if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
 					( copyIsArray = Array.isArray( copy ) ) ) ) {
+					src = target[ name ];
 
-					if ( copyIsArray ) {
-						copyIsArray = false;
-						clone = src && Array.isArray( src ) ? src : [];
-
+					// Ensure proper type for the source value
+					if ( copyIsArray && !Array.isArray( src ) ) {
+						clone = [];
+					} else if ( !copyIsArray && !jQuery.isPlainObject( src ) ) {
+						clone = {};
 					} else {
-						clone = src && jQuery.isPlainObject( src ) ? src : {};
+						clone = src;
 					}
+					copyIsArray = false;
 
 					// Never move original objects, clone them
 					target[ name ] = jQuery.extend( deep, clone, copy );
@@ -497,9 +513,6 @@ jQuery.extend( {
 	},
 
 	isEmptyObject: function( obj ) {
-
-		/* eslint-disable no-unused-vars */
-		// See https://github.com/eslint/eslint/issues/6125
 		var name;
 
 		for ( name in obj ) {
@@ -509,8 +522,8 @@ jQuery.extend( {
 	},
 
 	// Evaluates a script in a global context
-	globalEval: function( code ) {
-		DOMEval( code );
+	globalEval: function( code, options ) {
+		DOMEval( code, { nonce: options && options.nonce } );
 	},
 
 	each: function( obj, callback ) {
@@ -666,14 +679,14 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v2.3.3
+ * Sizzle CSS Selector Engine v2.3.4
  * https://sizzlejs.com/
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright JS Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://js.foundation/
  *
- * Date: 2016-08-08
+ * Date: 2019-04-08
  */
 (function( window ) {
 
@@ -707,6 +720,7 @@ var i,
 	classCache = createCache(),
 	tokenCache = createCache(),
 	compilerCache = createCache(),
+	nonnativeSelectorCache = createCache(),
 	sortOrder = function( a, b ) {
 		if ( a === b ) {
 			hasDuplicate = true;
@@ -768,8 +782,7 @@ var i,
 
 	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
-
-	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+	rdescend = new RegExp( whitespace + "|>" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -790,6 +803,7 @@ var i,
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
+	rhtml = /HTML$/i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
@@ -844,9 +858,9 @@ var i,
 		setDocument();
 	},
 
-	disabledAncestor = addCombinator(
+	inDisabledFieldset = addCombinator(
 		function( elem ) {
-			return elem.disabled === true && ("form" in elem || "label" in elem);
+			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
@@ -959,18 +973,22 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
-				!compilerCache[ selector + " " ] &&
-				(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
+				!nonnativeSelectorCache[ selector + " " ] &&
+				(!rbuggyQSA || !rbuggyQSA.test( selector )) &&
 
-				if ( nodeType !== 1 ) {
-					newContext = context;
-					newSelector = selector;
-
-				// qSA looks outside Element context, which is not what we want
-				// Thanks to Andrew Dupont for this workaround technique
-				// Support: IE <=8
+				// Support: IE 8 only
 				// Exclude object elements
-				} else if ( context.nodeName.toLowerCase() !== "object" ) {
+				(nodeType !== 1 || context.nodeName.toLowerCase() !== "object") ) {
+
+				newSelector = selector;
+				newContext = context;
+
+				// qSA considers elements outside a scoping root when evaluating child or
+				// descendant combinators, which is not what we want.
+				// In such cases, we work around the behavior by prefixing every selector in the
+				// list with an ID selector referencing the scope context.
+				// Thanks to Andrew Dupont for this technique.
+				if ( nodeType === 1 && rdescend.test( selector ) ) {
 
 					// Capture the context ID, setting it first if necessary
 					if ( (nid = context.getAttribute( "id" )) ) {
@@ -992,17 +1010,16 @@ function Sizzle( selector, context, results, seed ) {
 						context;
 				}
 
-				if ( newSelector ) {
-					try {
-						push.apply( results,
-							newContext.querySelectorAll( newSelector )
-						);
-						return results;
-					} catch ( qsaError ) {
-					} finally {
-						if ( nid === expando ) {
-							context.removeAttribute( "id" );
-						}
+				try {
+					push.apply( results,
+						newContext.querySelectorAll( newSelector )
+					);
+					return results;
+				} catch ( qsaError ) {
+					nonnativeSelectorCache( selector, true );
+				} finally {
+					if ( nid === expando ) {
+						context.removeAttribute( "id" );
 					}
 				}
 			}
@@ -1166,7 +1183,7 @@ function createDisabledPseudo( disabled ) {
 					// Where there is no isDisabled, check manually
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-						disabledAncestor( elem ) === disabled;
+						inDisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -1223,10 +1240,13 @@ support = Sizzle.support = {};
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
 isXML = Sizzle.isXML = function( elem ) {
-	// documentElement is verified for cases where it doesn't yet exist
-	// (such as loading iframes in IE - #4833)
-	var documentElement = elem && (elem.ownerDocument || elem).documentElement;
-	return documentElement ? documentElement.nodeName !== "HTML" : false;
+	var namespace = elem.namespaceURI,
+		docElem = (elem.ownerDocument || elem).documentElement;
+
+	// Support: IE <=8
+	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
+	// https://bugs.jquery.com/ticket/4833
+	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
 };
 
 /**
@@ -1648,11 +1668,8 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		setDocument( elem );
 	}
 
-	// Make sure that attribute selectors are quoted
-	expr = expr.replace( rattributeQuotes, "='$1']" );
-
 	if ( support.matchesSelector && documentIsHTML &&
-		!compilerCache[ expr + " " ] &&
+		!nonnativeSelectorCache[ expr + " " ] &&
 		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
 
@@ -1666,7 +1683,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
-		} catch (e) {}
+		} catch (e) {
+			nonnativeSelectorCache( expr, true );
+		}
 	}
 
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
@@ -2125,7 +2144,7 @@ Expr = Sizzle.selectors = {
 		"contains": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
 			};
 		}),
 
@@ -2264,7 +2283,11 @@ Expr = Sizzle.selectors = {
 		}),
 
 		"lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
-			var i = argument < 0 ? argument + length : argument;
+			var i = argument < 0 ?
+				argument + length :
+				argument > length ?
+					length :
+					argument;
 			for ( ; --i >= 0; ) {
 				matchIndexes.push( i );
 			}
@@ -3314,18 +3337,18 @@ jQuery.each( {
 		return siblings( elem.firstChild );
 	},
 	contents: function( elem ) {
-        if ( nodeName( elem, "iframe" ) ) {
-            return elem.contentDocument;
-        }
+		if ( typeof elem.contentDocument !== "undefined" ) {
+			return elem.contentDocument;
+		}
 
-        // Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-        // Treat the template element as a regular one in browsers that
-        // don't support it.
-        if ( nodeName( elem, "template" ) ) {
-            elem = elem.content || elem;
-        }
+		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
+		// Treat the template element as a regular one in browsers that
+		// don't support it.
+		if ( nodeName( elem, "template" ) ) {
+			elem = elem.content || elem;
+		}
 
-        return jQuery.merge( [], elem.childNodes );
+		return jQuery.merge( [], elem.childNodes );
 	}
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {
@@ -4634,6 +4657,26 @@ var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
+var documentElement = document.documentElement;
+
+
+
+	var isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem );
+		},
+		composed = { composed: true };
+
+	// Support: IE 9 - 11+, Edge 12 - 18+, iOS 10.0 - 10.2 only
+	// Check attachment across shadow DOM boundaries when possible (gh-3504)
+	// Support: iOS 10.0-10.2 only
+	// Early iOS 10 versions support `attachShadow` but not `getRootNode`,
+	// leading to errors. We need to check for `getRootNode`.
+	if ( documentElement.getRootNode ) {
+		isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem ) ||
+				elem.getRootNode( composed ) === elem.ownerDocument;
+		};
+	}
 var isHiddenWithinTree = function( elem, el ) {
 
 		// isHiddenWithinTree might be called from jQuery#filter function;
@@ -4648,7 +4691,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			isAttached( elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
 	};
@@ -4690,7 +4733,8 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
 		// Starting value computation is required for potential unit mismatches
-		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+		initialInUnit = elem.nodeType &&
+			( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -4837,7 +4881,7 @@ jQuery.fn.extend( {
 } );
 var rcheckableType = ( /^(?:checkbox|radio)$/i );
 
-var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]+)/i );
+var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]*)/i );
 
 var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 
@@ -4909,7 +4953,7 @@ function setGlobalEval( elems, refElements ) {
 var rhtml = /<|&#?\w+;/;
 
 function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, contains, j,
+	var elem, tmp, tag, wrap, attached, j,
 		fragment = context.createDocumentFragment(),
 		nodes = [],
 		i = 0,
@@ -4973,13 +5017,13 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			continue;
 		}
 
-		contains = jQuery.contains( elem.ownerDocument, elem );
+		attached = isAttached( elem );
 
 		// Append to fragment
 		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
-		if ( contains ) {
+		if ( attached ) {
 			setGlobalEval( tmp );
 		}
 
@@ -5022,8 +5066,6 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	div.innerHTML = "<textarea>x</textarea>";
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 } )();
-var documentElement = document.documentElement;
-
 
 
 var
@@ -5039,8 +5081,19 @@ function returnFalse() {
 	return false;
 }
 
+// Support: IE <=9 - 11+
+// focus() and blur() are asynchronous, except when they are no-op.
+// So expect focus to be synchronous when the element is already active,
+// and blur to be synchronous when the element is not already active.
+// (focus and blur are always synchronous in other supported browsers,
+// this just defines when we can count on it).
+function expectSync( elem, type ) {
+	return ( elem === safeActiveElement() ) === ( type === "focus" );
+}
+
 // Support: IE <=9 only
-// See #13393 for more info
+// Accessing document.activeElement can throw unexpectedly
+// https://bugs.jquery.com/ticket/13393
 function safeActiveElement() {
 	try {
 		return document.activeElement;
@@ -5340,9 +5393,10 @@ jQuery.event = {
 			while ( ( handleObj = matched.handlers[ j++ ] ) &&
 				!event.isImmediatePropagationStopped() ) {
 
-				// Triggered event must either 1) have no namespace, or 2) have namespace(s)
-				// a subset or equal to those in the bound event (both can have no namespace).
-				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
+				// If the event is namespaced, then each handler is only invoked if it is
+				// specially universal or its namespaces are a superset of the event's.
+				if ( !event.rnamespace || handleObj.namespace === false ||
+					event.rnamespace.test( handleObj.namespace ) ) {
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
@@ -5466,39 +5520,51 @@ jQuery.event = {
 			// Prevent triggered image.load events from bubbling to window.load
 			noBubble: true
 		},
-		focus: {
-
-			// Fire native event if possible so blur/focus sequence is correct
-			trigger: function() {
-				if ( this !== safeActiveElement() && this.focus ) {
-					this.focus();
-					return false;
-				}
-			},
-			delegateType: "focusin"
-		},
-		blur: {
-			trigger: function() {
-				if ( this === safeActiveElement() && this.blur ) {
-					this.blur();
-					return false;
-				}
-			},
-			delegateType: "focusout"
-		},
 		click: {
 
-			// For checkbox, fire native event so checked state will be right
-			trigger: function() {
-				if ( this.type === "checkbox" && this.click && nodeName( this, "input" ) ) {
-					this.click();
-					return false;
+			// Utilize native event to ensure correct state for checkable inputs
+			setup: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Claim the first handler
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					// dataPriv.set( el, "click", ... )
+					leverageNative( el, "click", returnTrue );
 				}
+
+				// Return false to allow normal processing in the caller
+				return false;
+			},
+			trigger: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Force setup before triggering a click
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					leverageNative( el, "click" );
+				}
+
+				// Return non-false to allow normal event-path propagation
+				return true;
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// For cross-browser consistency, suppress native .click() on links
+			// Also prevent it if we're currently inside a leveraged native-event stack
 			_default: function( event ) {
-				return nodeName( event.target, "a" );
+				var target = event.target;
+				return rcheckableType.test( target.type ) &&
+					target.click && nodeName( target, "input" ) &&
+					dataPriv.get( target, "click" ) ||
+					nodeName( target, "a" );
 			}
 		},
 
@@ -5514,6 +5580,93 @@ jQuery.event = {
 		}
 	}
 };
+
+// Ensure the presence of an event listener that handles manually-triggered
+// synthetic events by interrupting progress until reinvoked in response to
+// *native* events that it fires directly, ensuring that state changes have
+// already occurred before other listeners are invoked.
+function leverageNative( el, type, expectSync ) {
+
+	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
+	if ( !expectSync ) {
+		if ( dataPriv.get( el, type ) === undefined ) {
+			jQuery.event.add( el, type, returnTrue );
+		}
+		return;
+	}
+
+	// Register the controller as a special universal handler for all event namespaces
+	dataPriv.set( el, type, false );
+	jQuery.event.add( el, type, {
+		namespace: false,
+		handler: function( event ) {
+			var notAsync, result,
+				saved = dataPriv.get( this, type );
+
+			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
+
+				// Interrupt processing of the outer synthetic .trigger()ed event
+				// Saved data should be false in such cases, but might be a leftover capture object
+				// from an async native handler (gh-4350)
+				if ( !saved.length ) {
+
+					// Store arguments for use when handling the inner native event
+					// There will always be at least one argument (an event object), so this array
+					// will not be confused with a leftover capture object.
+					saved = slice.call( arguments );
+					dataPriv.set( this, type, saved );
+
+					// Trigger the native event and capture its result
+					// Support: IE <=9 - 11+
+					// focus() and blur() are asynchronous
+					notAsync = expectSync( this, type );
+					this[ type ]();
+					result = dataPriv.get( this, type );
+					if ( saved !== result || notAsync ) {
+						dataPriv.set( this, type, false );
+					} else {
+						result = {};
+					}
+					if ( saved !== result ) {
+
+						// Cancel the outer synthetic event
+						event.stopImmediatePropagation();
+						event.preventDefault();
+						return result.value;
+					}
+
+				// If this is an inner synthetic event for an event with a bubbling surrogate
+				// (focus or blur), assume that the surrogate already propagated from triggering the
+				// native event and prevent that from happening again here.
+				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
+				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
+				// less bad than duplication.
+				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
+					event.stopPropagation();
+				}
+
+			// If this is a native event triggered above, everything is now in order
+			// Fire an inner synthetic event with the original arguments
+			} else if ( saved.length ) {
+
+				// ...and capture the result
+				dataPriv.set( this, type, {
+					value: jQuery.event.trigger(
+
+						// Support: IE <=9 - 11+
+						// Extend with the prototype to reset the above stopImmediatePropagation()
+						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
+						saved.slice( 1 ),
+						this
+					)
+				} );
+
+				// Abort handling of the native event
+				event.stopImmediatePropagation();
+			}
+		}
+	} );
+}
 
 jQuery.removeEvent = function( elem, type, handle ) {
 
@@ -5627,6 +5780,7 @@ jQuery.each( {
 	shiftKey: true,
 	view: true,
 	"char": true,
+	code: true,
 	charCode: true,
 	key: true,
 	keyCode: true,
@@ -5672,6 +5826,33 @@ jQuery.each( {
 		return event.which;
 	}
 }, jQuery.event.addProp );
+
+jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
+	jQuery.event.special[ type ] = {
+
+		// Utilize native event if possible so blur/focus sequence is correct
+		setup: function() {
+
+			// Claim the first handler
+			// dataPriv.set( this, "focus", ... )
+			// dataPriv.set( this, "blur", ... )
+			leverageNative( this, type, expectSync );
+
+			// Return false to allow normal processing in the caller
+			return false;
+		},
+		trigger: function() {
+
+			// Force setup before trigger
+			leverageNative( this, type );
+
+			// Return non-false to allow normal event-path propagation
+			return true;
+		},
+
+		delegateType: delegateType
+	};
+} );
 
 // Create mouseenter/leave events using mouseover/out and event-time checks
 // so that event delegation works in jQuery.
@@ -5923,11 +6104,13 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl ) {
-								jQuery._evalUrl( node.src );
+							if ( jQuery._evalUrl && !node.noModule ) {
+								jQuery._evalUrl( node.src, {
+									nonce: node.nonce || node.getAttribute( "nonce" )
+								} );
 							}
 						} else {
-							DOMEval( node.textContent.replace( rcleanScript, "" ), doc, node );
+							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
 						}
 					}
 				}
@@ -5949,7 +6132,7 @@ function remove( elem, selector, keepData ) {
 		}
 
 		if ( node.parentNode ) {
-			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
+			if ( keepData && isAttached( node ) ) {
 				setGlobalEval( getAll( node, "script" ) );
 			}
 			node.parentNode.removeChild( node );
@@ -5967,7 +6150,7 @@ jQuery.extend( {
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
-			inPage = jQuery.contains( elem.ownerDocument, elem );
+			inPage = isAttached( elem );
 
 		// Fix IE cloning issues
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
@@ -6263,8 +6446,10 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 		// Support: IE 9 only
 		// Detect overflow:scroll screwiness (gh-3699)
+		// Support: Chrome <=64
+		// Don't get tricked when zoom affects offsetWidth (gh-4029)
 		div.style.position = "absolute";
-		scrollboxSizeVal = div.offsetWidth === 36 || "absolute";
+		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
 
 		documentElement.removeChild( container );
 
@@ -6335,7 +6520,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		if ( ret === "" && !isAttached( elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
 
@@ -6391,29 +6576,12 @@ function addGetHookIf( conditionFn, hookFn ) {
 }
 
 
-var
+var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+	emptyStyle = document.createElement( "div" ).style,
+	vendorProps = {};
 
-	// Swappable if display is none or starts with table
-	// except "table", "table-cell", or "table-caption"
-	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
-	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-	rcustomProp = /^--/,
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
-	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
-	},
-
-	cssPrefixes = [ "Webkit", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style;
-
-// Return a css property mapped to a potentially vendor prefixed property
+// Return a vendor-prefixed property or undefined
 function vendorPropName( name ) {
-
-	// Shortcut for names that are not vendor prefixed
-	if ( name in emptyStyle ) {
-		return name;
-	}
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
@@ -6427,15 +6595,32 @@ function vendorPropName( name ) {
 	}
 }
 
-// Return a property mapped along what jQuery.cssProps suggests or to
-// a vendor prefixed property.
+// Return a potentially-mapped jQuery.cssProps or vendor prefixed property
 function finalPropName( name ) {
-	var ret = jQuery.cssProps[ name ];
-	if ( !ret ) {
-		ret = jQuery.cssProps[ name ] = vendorPropName( name ) || name;
+	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
+
+	if ( final ) {
+		return final;
 	}
-	return ret;
+	if ( name in emptyStyle ) {
+		return name;
+	}
+	return vendorProps[ name ] = vendorPropName( name ) || name;
 }
+
+
+var
+
+	// Swappable if display is none or starts with table
+	// except "table", "table-cell", or "table-caption"
+	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
+	rcustomProp = /^--/,
+	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
+	cssNormalTransform = {
+		letterSpacing: "0",
+		fontWeight: "400"
+	};
 
 function setPositiveNumber( elem, value, subtract ) {
 
@@ -6508,7 +6693,10 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 			delta -
 			extra -
 			0.5
-		) );
+
+		// If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
+		// Use an explicit zero to avoid NaN (gh-3964)
+		) ) || 0;
 	}
 
 	return delta;
@@ -6518,9 +6706,16 @@ function getWidthOrHeight( elem, dimension, extra ) {
 
 	// Start with computed style
 	var styles = getStyles( elem ),
+
+		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
+		// Fake content-box until we know it's needed to know the true value.
+		boxSizingNeeded = !support.boxSizingReliable() || extra,
+		isBorderBox = boxSizingNeeded &&
+			jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+		valueIsBorderBox = isBorderBox,
+
 		val = curCSS( elem, dimension, styles ),
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-		valueIsBorderBox = isBorderBox;
+		offsetProp = "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 );
 
 	// Support: Firefox <=54
 	// Return a confounding non-pixel value or feign ignorance, as appropriate.
@@ -6531,22 +6726,29 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		val = "auto";
 	}
 
-	// Check for style in case a browser which returns unreliable values
-	// for getComputedStyle silently falls back to the reliable elem.style
-	valueIsBorderBox = valueIsBorderBox &&
-		( support.boxSizingReliable() || val === elem.style[ dimension ] );
 
 	// Fall back to offsetWidth/offsetHeight when value is "auto"
 	// This happens for inline elements with no explicit setting (gh-3571)
 	// Support: Android <=4.1 - 4.3 only
 	// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
-	if ( val === "auto" ||
-		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
+	// Support: IE 9-11 only
+	// Also use offsetWidth/offsetHeight for when box sizing is unreliable
+	// We use getClientRects() to check for hidden/disconnected.
+	// In those cases, the computed value can be trusted to be border-box
+	if ( ( !support.boxSizingReliable() && isBorderBox ||
+		val === "auto" ||
+		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) &&
+		elem.getClientRects().length ) {
 
-		val = elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ];
+		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-		// offsetWidth/offsetHeight provide border-box values
-		valueIsBorderBox = true;
+		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
+		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
+		// retrieved value as a content box dimension.
+		valueIsBorderBox = offsetProp in elem;
+		if ( valueIsBorderBox ) {
+			val = elem[ offsetProp ];
+		}
 	}
 
 	// Normalize "" and auto
@@ -6592,6 +6794,13 @@ jQuery.extend( {
 		"flexGrow": true,
 		"flexShrink": true,
 		"fontWeight": true,
+		"gridArea": true,
+		"gridColumn": true,
+		"gridColumnEnd": true,
+		"gridColumnStart": true,
+		"gridRow": true,
+		"gridRowEnd": true,
+		"gridRowStart": true,
 		"lineHeight": true,
 		"opacity": true,
 		"order": true,
@@ -6647,7 +6856,9 @@ jQuery.extend( {
 			}
 
 			// If a number was passed in, add the unit (except for certain CSS properties)
-			if ( type === "number" ) {
+			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
+			// "px" to a few hardcoded values.
+			if ( type === "number" && !isCustomProp ) {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
@@ -6747,18 +6958,29 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 		set: function( elem, value, extra ) {
 			var matches,
 				styles = getStyles( elem ),
-				isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-				subtract = extra && boxModelAdjustment(
-					elem,
-					dimension,
-					extra,
-					isBorderBox,
-					styles
-				);
+
+				// Only read styles.position if the test has a chance to fail
+				// to avoid forcing a reflow.
+				scrollboxSizeBuggy = !support.scrollboxSize() &&
+					styles.position === "absolute",
+
+				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
+				boxSizingNeeded = scrollboxSizeBuggy || extra,
+				isBorderBox = boxSizingNeeded &&
+					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+				subtract = extra ?
+					boxModelAdjustment(
+						elem,
+						dimension,
+						extra,
+						isBorderBox,
+						styles
+					) :
+					0;
 
 			// Account for unreliable border-box dimensions by comparing offset* to computed and
 			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && support.scrollboxSize() === styles.position ) {
+			if ( isBorderBox && scrollboxSizeBuggy ) {
 				subtract -= Math.ceil(
 					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 					parseFloat( styles[ dimension ] ) -
@@ -6926,9 +7148,9 @@ Tween.propHooks = {
 			// Use .style if available and use plain properties where available.
 			if ( jQuery.fx.step[ tween.prop ] ) {
 				jQuery.fx.step[ tween.prop ]( tween );
-			} else if ( tween.elem.nodeType === 1 &&
-				( tween.elem.style[ jQuery.cssProps[ tween.prop ] ] != null ||
-					jQuery.cssHooks[ tween.prop ] ) ) {
+			} else if ( tween.elem.nodeType === 1 && (
+					jQuery.cssHooks[ tween.prop ] ||
+					tween.elem.style[ finalPropName( tween.prop ) ] != null ) ) {
 				jQuery.style( tween.elem, tween.prop, tween.now + tween.unit );
 			} else {
 				tween.elem[ tween.prop ] = tween.now;
@@ -8635,6 +8857,10 @@ jQuery.param = function( a, traditional ) {
 				encodeURIComponent( value == null ? "" : value );
 		};
 
+	if ( a == null ) {
+		return "";
+	}
+
 	// If an array was passed in, assume that it is an array of form elements.
 	if ( Array.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
 
@@ -9137,12 +9363,14 @@ jQuery.extend( {
 						if ( !responseHeaders ) {
 							responseHeaders = {};
 							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
+								responseHeaders[ match[ 1 ].toLowerCase() + " " ] =
+									( responseHeaders[ match[ 1 ].toLowerCase() + " " ] || [] )
+										.concat( match[ 2 ] );
 							}
 						}
-						match = responseHeaders[ key.toLowerCase() ];
+						match = responseHeaders[ key.toLowerCase() + " " ];
 					}
-					return match == null ? null : match;
+					return match == null ? null : match.join( ", " );
 				},
 
 				// Raw string
@@ -9531,7 +9759,7 @@ jQuery.each( [ "get", "post" ], function( i, method ) {
 } );
 
 
-jQuery._evalUrl = function( url ) {
+jQuery._evalUrl = function( url, options ) {
 	return jQuery.ajax( {
 		url: url,
 
@@ -9541,7 +9769,16 @@ jQuery._evalUrl = function( url ) {
 		cache: true,
 		async: false,
 		global: false,
-		"throws": true
+
+		// Only evaluate the response if it is successful (gh-4126)
+		// dataFilter is not invoked for failure responses, so using it instead
+		// of the default converter is kludgy but it works.
+		converters: {
+			"text script": function() {}
+		},
+		dataFilter: function( response ) {
+			jQuery.globalEval( response, options );
+		}
 	} );
 };
 
@@ -9824,24 +10061,21 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 
-	// This transport only deals with cross domain requests
-	if ( s.crossDomain ) {
+	// This transport only deals with cross domain or forced-by-attrs requests
+	if ( s.crossDomain || s.scriptAttrs ) {
 		var script, callback;
 		return {
 			send: function( _, complete ) {
-				script = jQuery( "<script>" ).prop( {
-					charset: s.scriptCharset,
-					src: s.url
-				} ).on(
-					"load error",
-					callback = function( evt ) {
+				script = jQuery( "<script>" )
+					.attr( s.scriptAttrs || {} )
+					.prop( { charset: s.scriptCharset, src: s.url } )
+					.on( "load error", callback = function( evt ) {
 						script.remove();
 						callback = null;
 						if ( evt ) {
 							complete( evt.type === "error" ? 404 : 200, evt.type );
 						}
-					}
-				);
+					} );
 
 				// Use native DOM manipulation to avoid our domManip AJAX trickery
 				document.head.appendChild( script[ 0 ] );

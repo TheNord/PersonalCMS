@@ -45,3 +45,5 @@ mix.js([
     ], '../build/js/admin.js');
 
 mix.js('resources/admin/dist/js/dashboard.js', '../build/js/admin/dashboard.js');
+
+mix.js('resources/admin/dependencies.js', '../build/js/admin/dependencies.js');

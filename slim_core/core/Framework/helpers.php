@@ -1,6 +1,8 @@
 <?php
 
 use Framework\Container;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
 use Psr\Http\Message\ResponseInterface;
 use Framework\Redirector;
 
@@ -98,5 +100,20 @@ if (! function_exists('auth')) {
         }
 
         return $session;
+    }
+}
+
+
+if (! function_exists('filesystem')) {
+    /**
+     * Get file system service
+     *
+     * @return Filesystem
+     */
+    function filesystem()
+    {
+        $adapter = new Local(app('settings')['root_folder']);
+        $filesystem = new Filesystem($adapter);
+        return $filesystem;
     }
 }
