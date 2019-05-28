@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %}{% endblock %} - App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{ csrf_meta_widget() }}
+    {% block meta %}{% endblock %}
+    <link rel="stylesheet" href="/admin/build{{ Mix('/css/app.css') }}" />
+</head>
+<body class="app">
+<header class="app-header">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path_for('home') }}">
+                Application
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li><a class="nav-link" href="{{ path_for('blog') }}"><i class="fa fa-book"></i> Blog</a></li>
+                    <li><a class="nav-link" href="{{ path_for('about') }}"><i class="fa fa-book"></i> About</a></li>
+                    {% if isAuth() %}
+                    <li><a class="nav-link" href="{{ path_for('cabinet.index') }}"><i class="fa fa-user"></i> Cabinet</a></li>
+                    <li><a class="nav-link" href="{{ path_for('logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                    {% else %}
+                    <li><a class="nav-link" href="{{ path_for('login.index') }}"><i class="fa fa-user"></i> Authorization</a></li>
+                    <li><a class="nav-link" href="{{ path_for('register.index') }}"><i class="fa fa-user-plus"></i> Registration</a></li>
+                    {% endif %}
+                    <li><a class="nav-link" href="{{ path_for('contact') }}"><i class="fa fa-phone"></i> Contacts</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="app-content">
+    <main class="container">
+        {% block breadcrumbs %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+</div>
+
+<footer class="app-footer">
+    <div class="container">
+        <div class="border-top pt-3">
+            <p>&copy; {{ date()|date('Y') }} - My App</p>
+        </div>
+    </div>
+</footer>
+
+<script src="/admin/build{{ Mix('/js/app.js') }}"></script>
+</body>
+</html>
