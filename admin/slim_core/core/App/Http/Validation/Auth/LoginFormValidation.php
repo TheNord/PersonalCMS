@@ -13,11 +13,11 @@ class LoginFormValidation extends Validator
 		$filter->validate('email')
 		    ->isNotBlank()
 		    ->is('email')
-		    ->setMessage('The email is required.');
+		    ->setMessage('Email обязателен к заполнению.');
 
 		$filter->validate('password')
 		   ->isNotBlank()
-		   ->setMessage('The password is required.');
+		   ->setMessage('Пароль обязателен к заполнению.');
 
 		return self::check($data);
 	}	

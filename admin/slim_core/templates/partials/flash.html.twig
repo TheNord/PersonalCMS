@@ -1,0 +1,19 @@
+{% if flash('status') %}
+<div class="alert alert-success">
+    {{ flash('status') }}
+</div>
+{% endif %}
+
+{% if flash('error') %}
+<div class="alert alert-danger">
+    {{ flash('error') }}
+</div>
+{% endif %}
+
+{% if flash('errors') %}
+    {% for error in flash('errors') %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+    {% endfor %}
+{% endif %}

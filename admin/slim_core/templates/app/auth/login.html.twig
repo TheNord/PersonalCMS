@@ -1,46 +1,21 @@
-{% extends 'layout/default.html.twig' %}
-
-{% block title %}Authorization page{% endblock %}
-
-{% block meta %}
-    <meta name="description" content="Authorization description" />
-{% endblock %}
+{% extends "layout/auth.html.twig" %}
 
 {% block content %}
-    <div class="jumbotron">
-        <h1>Authorization</h1>
-
-        {% if flash('status') %}
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                {{ flash('status') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        {% endif %}
-
-        {% if flash('errors') %}
-            <ul class="list-errors">
-                {% for error in flash('errors') %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
-        <form action="{{ path_for('login.check') }}" method="post">
+    <div class="login-box-body">
+        <p class="login-box-msg">Авторизация в системе</p>
+        <form method="POST" action="{{ path_for('login.check') }}">
             {{ csrf_input_widget() }}
-
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="form-group has-feedback">
+                <input class="form-control" name="email" placeholder="Email" required type="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            <div class="form-group has-feedback">
+                <input class="form-control" name="password" placeholder="Password" required type="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary btn-block btn-flat" type="submit">Войти</button>
         </form>
+        <br/>
+        <a href="{{ path_for('register.index') }}" class="text-center">Регистрация нового пользователя</a>
     </div>
 {% endblock %}

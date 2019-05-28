@@ -67,9 +67,23 @@ if (! function_exists('view')) {
     }
 }
 
-if (! function_exists('session')) {
+if (! function_exists('flash')) {
     /**
-     * Get current session or set value
+     * Set flash message in session
+     *
+     * @param string $key
+     * @param string|array $value
+     * @return void
+     */
+    function flash($key, $value)
+    {
+        session()->setFlash($key, $value);
+    }
+}
+
+if (! function_exists('auth')) {
+    /**
+     * Get current auth user
      *
      * @param string $key
      * @param string|array $value
@@ -84,19 +98,5 @@ if (! function_exists('session')) {
         }
 
         return $session;
-    }
-}
-
-if (! function_exists('flash')) {
-    /**
-     * Set flash message in session
-     *
-     * @param string $key
-     * @param string|array $value
-     * @return void
-     */
-    function flash($key, $value)
-    {
-        session()->setFlash($key, $value);
     }
 }

@@ -50,28 +50,7 @@ class RegisterController
         }
 
         return redirect($response)
-            ->with('status', 'Your account is successfully registered! Please check your email, and activate your account.')
-            ->route('register.index');
-    }
-
-    /**
-     * Activate user account after registration
-     *
-     * @param RequestInterface $request
-     * @param ResponseInterface $response
-     * @return ResponseInterface
-     */
-    public function activate(RequestInterface $request, ResponseInterface $response)
-    {
-        try {
-            $token = $request->getAttribute('token');
-            $this->service->activate($token);
-        } catch (\Exception $e) {
-            return redirect($response)->with('status', $e->getMessage())->route('register.index');
-        }
-
-        return redirect($response)
-            ->with('status', 'Your account is successfully activated!')
+            ->with('status', 'Аккаунт был успешно зарегистрирован.')
             ->route('register.index');
     }
 }

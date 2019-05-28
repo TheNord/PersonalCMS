@@ -37,11 +37,11 @@ class LoginController
 
         try {
             $this->service->login($data);
-        } catch (\DomainException $e) {
-            return redirect($response)->with('status', $e->getMessage())->route('login.index');
+        } catch (\Exception $e) {
+            return redirect($response)->with('error', 'Неверная комбинация логина и пароля')->route('login.index');
         }
 
-        return redirect($response)->route('cabinet.index');
+        return redirect($response)->route('home');
     }
 
     public function logout(RequestInterface $request, ResponseInterface $response)

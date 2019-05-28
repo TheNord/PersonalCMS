@@ -39,15 +39,6 @@ class UserRepository
         return $user;
     }
 
-    public function getByToken(string $token): User
-    {
-        /** @var User $user */
-        if (!$user = $this->repo->findOneBy(['confirmToken.token' => $token])) {
-            throw new EntityNotFoundException('Invalid token or user has already been activated.');
-        }
-        return $user;
-    }
-
     public function add(User $user): void
     {
         $this->em->persist($user);

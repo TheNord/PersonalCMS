@@ -26,16 +26,13 @@ class LoginService
     public function login(array $data)
     {
         $user = $this->users->getByEmail($data['email']);
+
         $password = $user->getPassword();
 
         $result = PasswordHasher::validate($data['password'], $password);
 
         if (!$result) {
-            throw new \DomainException('Wrong combination of login and password');
-        }
-
-        if (!$user->isActive()) {
-            throw new \DomainException('Your need activate your account');
+            throw new \DomainException('Неверная комбинация логина и пароля');
         }
 
         SessionHelper::setUser($user);
