@@ -4,8 +4,6 @@
     <div class="login-box-body">
         <p class="login-box-msg">Регистрация нового пользователя</p>
         <form action="{{ path_for('register.store') }}" method="post">
-            {{ csrf_input_widget() }}
-
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Имя" name="name" required>
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>

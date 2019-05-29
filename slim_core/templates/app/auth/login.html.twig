@@ -4,7 +4,6 @@
     <div class="login-box-body">
         <p class="login-box-msg">Авторизация в системе</p>
         <form method="POST" action="{{ path_for('login.check') }}">
-            {{ csrf_input_widget() }}
             <div class="form-group has-feedback">
                 <input class="form-control" name="email" placeholder="Email" required type="email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
