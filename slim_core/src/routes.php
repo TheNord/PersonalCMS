@@ -32,7 +32,8 @@ $app->group('/admin', function () use ($app) {
     $app->post('/pages/edit/save', 'App\Http\Controllers\PageController:store');
 
     // Contact form routes
-    $app->get('/contacts', 'App\Http\Controllers\Admin\ContactController:index');
+    $app->get('/contacts', 'App\Http\Controllers\Admin\ContactController:index')->setName('admin.contacts');
+    $app->post('/contacts/{id}/destroy', 'App\Http\Controllers\Admin\ContactController:destroy')->setName('admin.contacts.destroy');
 
 })->add(AuthMiddleware::class);
 

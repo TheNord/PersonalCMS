@@ -19,17 +19,19 @@ class ContactReadRepository
 
     public function all()
     {
-        $contacts = $this->em->getRepository(Contact::class)->findAll();
-        
+        $contacts = $this->em->getRepository(Contact::class)->findBy([], ['id' => 'DESC']);
         return $contacts;
     }
 
-    /**
-     * @param int $id
-     * @return Post|object|null
-     */
-    public function find(int $id): ?Post
+    public function delete(int $id)
     {
-        return $this->em->getRepository(Post::class)->find($id);
+        $contact = $this->find($id);
+        $this->em->remove($contact);
+        $this->em->flush();
+    }
+
+    public function find(int $id): Contact
+    {
+        return $this->em->getRepository(Contact::class)->find($id);
     }
 }
