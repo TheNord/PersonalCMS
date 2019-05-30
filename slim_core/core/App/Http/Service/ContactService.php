@@ -12,12 +12,14 @@ class ContactService
     private $em;
     private $mailer;
     private $adminEmail;
+    private $projectName;
 
     public function __construct(ContainerInterface $container)
     {
         $this->em = $container->get(EntityManager::class);
         $this->mailer = $container->get('mailer');
         $this->adminEmail = $container->get('settings')['email'];
+        $this->projectName = $container->get('settings')['projectName'];
     }
 
     /**
@@ -52,7 +54,7 @@ class ContactService
     public function sendMail($data)
     {
         // Create a message
-        $message = (new Swift_Message('Wonderful Subject'))
+        $message = (new Swift_Message("Сообщение с сайта: {$this->projectName}"))
             ->setFrom($data['email'])
             ->setTo($this->adminEmail)
             ->setBody(view('mail/contact', [

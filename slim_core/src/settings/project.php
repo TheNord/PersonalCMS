@@ -9,6 +9,8 @@ return [
         'email' => getenv('MAIL_ADMIN'),
         'email_from' => getenv('MAIL_FROM'),
 
+        'projectName' => getenv('PROJECT_NAME'),
+
         'root_folder' => __DIR__ . '/../../'
     ],
 ];

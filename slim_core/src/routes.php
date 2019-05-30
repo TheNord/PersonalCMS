@@ -20,16 +20,24 @@ $app->group('/utils', function () use ($app) {
     });
 });
 
+// Admin group routes
 $app->group('/admin', function () use ($app) {
     $app->get('/dashboard', 'App\Http\Controllers\DashboardController:dashboard')->setName('dashboard')->add(AuthMiddleware::class);
 
+    // Pages routes
     $app->get('/pages', 'App\Http\Controllers\PageController:index')->setName('pages');
     $app->get('/pages/{page}/edit', 'App\Http\Controllers\PageController:edit')->setName('pages.edit');
     $app->get('/pages/{page}/edit/start', 'App\Http\Controllers\PageController:editStart')->setName('pages.edit.start');
 
     $app->post('/pages/edit/save', 'App\Http\Controllers\PageController:store');
+
+    // Contact form routes
+    $app->get('/contacts', 'App\Http\Controllers\Admin\ContactController:index');
+
 })->add(AuthMiddleware::class);
 
 $app->get('/', function () {
     return view('main/home');
-});
+})->setName('home');
+
+$app->post('/contacts', 'App\Http\Controllers\ContactController:send');

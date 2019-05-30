@@ -16,10 +16,6 @@ class ContactController
         $this->service = new ContactService($container);
     }
 
-    public function index($request, $response) {
-        return view('app/contact');
-    }
-
     public function send(RequestInterface $request, ResponseInterface $response) {
         $data = $request->getParsedBody();
 
@@ -28,20 +24,20 @@ class ContactController
 
         // if we have validation errors, return contact page and set flash data errors (method with())
         if ($validation) {
-            return redirect($response)->with('errors', $validation)->route('contact');
+            return redirect($response)->with('errors', $validation)->route('home');
         }
 
         $filter = $this->service->checkSpam();
 
         // spam filter, sending letters no more once in ten minutes
         if ($filter) {
-            return redirect($response)->with('status', 'You have recently sent a message, please wait!')->route('contact');
+            return redirect($response)->with('error', 'Ранее вы отправляли сообщение, пожалуйста подождите.')->route('home');
         }
 
         // store data in database and send email
         $this->service->sending($data);
 
         // return after all actions
-        return redirect($response)->with('status', 'You message successfully sent!')->route('contact');
+        return redirect($response)->with('success', 'Ваше сообщение успешно отправлено!')->route('home');
     }
 }
