@@ -33,6 +33,10 @@ class PageController
 
     public function store(RequestInterface $request, ResponseInterface $response)
     {
-        $content = json_decode($request->getBody()->getContents())->content;
+        $data = json_decode($request->getBody()->getContents());
+        $content = $data->content;
+        $page = $data->page;
+
+        filesystem()->put("/templates/main/{$page}.html.twig", $content);
     }
 }

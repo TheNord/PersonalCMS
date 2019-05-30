@@ -1,11 +1,35 @@
 {{ pageContent | raw }}
 
+<div id="edit_manager" class="edit_manager">
+
+<div class="show_success_updated" id="show_success_updated" style="display:none;">
+    <img src="/build/img/ok-512.png">
+</div>
+
 <div class="editing_modal">
     <button class="btn_editing btn_editing_cancel">Отменить</button>
     <button class="btn_editing btn_editing_save">Сохранить</button>
 </div>
 
 <style>
+    .show_success_updated {
+        z-index: 99999999;
+        position: fixed;
+        top: 250px;
+        left: 45%;
+        opacity: 0;
+        transition: 1s;
+    }
+
+    .show_success_updated_display {
+        opacity:1;
+	    transition: 1s;
+    }
+
+    .show_success_updated img {
+        width: 250px;
+    }
+
     .editing_modal {
         position: fixed;
         bottom: 15px;
@@ -47,24 +71,60 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.0-rc.1/js/froala_editor.pkgd.min.js"></script>
 
     <script>
-        const Froala = new FroalaEditor('div#introduction', {
-            toolbarInline: true,
-            charCounterCount: false
-        });
-        
+        function initializeEditor() {
+            window.Froala = new FroalaEditor('div#introduction', {
+                toolbarInline: true,
+                charCounterCount: false
+            });
+        }
+            
+        let successImage = document.getElementById('show_success_updated');
+
+        function showSuccessInfo() {
+
+            successImage.classList.add('show_success_updated_display');
+
+            setTimeout(() => {
+                successImage.classList.remove('show_success_updated_display');
+                successImage.style.display = 'none';
+            }, 2000);
+        }
+
+        initializeEditor();
+
         let btnSave = document.querySelector('.btn_editing_save');
         let btnCancel = document.querySelector('.btn_editing_cancel');
 
         let path = location.pathname.split('/');
-        let page = path[2];
+        let page = path[3];
 
         btnSave.addEventListener('click', function () {
+            window.Froala.destroy();
+
+            let fullContent = document.documentElement.cloneNode(true);
+            fullContent.getElementsByClassName('edit_manager')[0].outerHTML = null;
+
             axios
-                .post(`/pages/${page}/edit/save`, {
-                    content: Froala.html.get()
+                .post(`/admin/pages/edit/save`, {
+                    content: fullContent.outerHTML,
+                    page
                 })
-                .then(res => console.log(res.data))
+                .then(res => {
+                    initializeEditor();
+                    
+                    successImage.style.display = 'block';
+
+                    showSuccessInfo();
+                })
                 .catch(error => console.log(error))
-        })
+        });
+
+        btnCancel.addEventListener('click', function () {
+            let link = window.location.href;
+            let returnPage = link.replace('start', '');
+
+            confirm('Вы действительно хотите выйти? Все несохраненные изменения будут потеряны.') ? window.location.replace(returnPage) : '';
+        });
     </script>
 {% endif %}
+</div>
