@@ -45,8 +45,6 @@ $app->group('/admin', function () use ($app) {
     $app->post('/settings/project', 'App\Http\Controllers\Admin\SettingsController:projectUpdate')->setName('admin.settings.project.update');
 })->add(AuthMiddleware::class);
 
-$app->get('/', function () {
-    return view('main/home');
-})->setName('home');
+$app->get('/','App\Http\Controllers\MainPageController:index')->setName('home');
 
 $app->post('/contacts', 'App\Http\Controllers\ContactController:send');
