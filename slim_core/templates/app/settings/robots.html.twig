@@ -1,0 +1,68 @@
+{% extends 'layout/app.html.twig' %}
+
+{% set page = 'settings' %}
+
+{% block title %}Управление настройками - robots.txt
+{% endblock %}
+
+{% block content %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Управление настройками
+            </h1>
+        </section>
+
+        <section class="content">
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Редактирование robots.txt</h3>
+                </div>
+                <!-- /.box-header -->
+
+                <!-- form start -->
+                <form method="POST" action="{{ path_for('admin.settings.robots.update') }}">
+                    <div class="box-body">
+                        
+                        <div class="box box-default collapsed-box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Краткое рукаводство по настройке</h3>
+
+                                <div class="box-tools pull-right">
+                                    <button class="btn btn-box-tool" data-widget="collapse" type="button">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <p>Для запрета индексирования сайта вы можете изменить содержимое robots на:</p>
+                                <p><b>User-agent: *</b></p>
+                                <p><b>Disallow: /</b></p>
+                                <hr />
+                                <p>Для запрета индексации определенной папки:</p>
+                                <p><b>User-agent: *</b></p>
+                                <p><b>Disallow: /folder</b></p>
+                                <p>Где folder - название папки которую нужно закрыть от индексации</p>
+                                <hr />
+                                <p>Сервис проверки валидности <a href="https://webmaster.yandex.ru/tools/robotstxt/">https://webmaster.yandex.ru/tools/robotstxt/</a></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" name="content" rows="14">{{ robots }}</textarea>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <a class="btn btn-default" href="{{ path_for('admin.settings') }}">Отменить</a>
+                        <button class="btn btn-info pull-right" type="submit">Сохранить</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -110,10 +110,16 @@ if (! function_exists('filesystem')) {
      *
      * @return Filesystem
      */
-    function filesystem()
+    function filesystem($mainDir = false)
     {
-        $adapter = new Local(app('settings')['root_folder']);
+        if(!$mainDir) {
+            $adapter = new Local(app('settings')['root_folder']);
+        } else {
+            $adapter = new Local(app('settings')['root_folder'] . '../');
+        }
+
         $filesystem = new Filesystem($adapter);
+
         return $filesystem;
     }
 }

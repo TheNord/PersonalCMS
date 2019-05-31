@@ -22,7 +22,7 @@ $app->group('/utils', function () use ($app) {
 
 // Admin group routes
 $app->group('/admin', function () use ($app) {
-    $app->get('/dashboard', 'App\Http\Controllers\DashboardController:dashboard')->setName('dashboard')->add(AuthMiddleware::class);
+    $app->get('', 'App\Http\Controllers\DashboardController:dashboard')->setName('dashboard')->add(AuthMiddleware::class);
 
     // Pages routes
     $app->get('/pages', 'App\Http\Controllers\PageController:index')->setName('pages');
@@ -35,6 +35,14 @@ $app->group('/admin', function () use ($app) {
     $app->get('/contacts', 'App\Http\Controllers\Admin\ContactController:index')->setName('admin.contacts');
     $app->post('/contacts/{id}/destroy', 'App\Http\Controllers\Admin\ContactController:destroy')->setName('admin.contacts.destroy');
 
+    // Site settings
+    $app->get('/settings', 'App\Http\Controllers\Admin\SettingsController:index')->setName('admin.settings');
+
+    $app->get('/settings/robots', 'App\Http\Controllers\Admin\SettingsController:robots')->setName('admin.settings.robots');
+    $app->post('/settings/robots', 'App\Http\Controllers\Admin\SettingsController:robotsUpdate')->setName('admin.settings.robots.update');
+
+    $app->get('/settings/project', 'App\Http\Controllers\Admin\SettingsController:project')->setName('admin.settings.project');
+    $app->post('/settings/project', 'App\Http\Controllers\Admin\SettingsController:projectUpdate')->setName('admin.settings.project.update');
 })->add(AuthMiddleware::class);
 
 $app->get('/', function () {

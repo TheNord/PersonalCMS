@@ -1,0 +1,64 @@
+{% extends 'layout/app.html.twig' %}
+
+{% set page = 'settings' %}
+
+{% block title %}Управление настройками{% endblock %}
+
+{% block content %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Управление настройками
+            </h1>
+        </section>
+
+        <section
+            class="content">
+
+            <!-- Default box -->
+            <div class="box">
+                <div class="box-body">
+                    {% include 'partials/flash.html.twig' %}
+
+                    <div class="row" style="padding-top: 25px">
+                        <div class="col-md-3">
+                            <div class="small-box bg-orange">
+                                <div class="inner">
+                                    <h3>Основные</h3>
+
+                                    <p>Настройка проекта (email, название)</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-dashboard"></i>
+                                </div>
+                                <a class="small-box-footer" href="{{ path_for('admin.settings.project') }}">Перейти к редактированию
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>robots.txt</h3>
+
+                                    <p>Настройка robots.txt (индексация)</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-github-alt"></i>
+                                </div>
+                                <a class="small-box-footer" href="{{ path_for('admin.settings.robots') }}">Перейти к редактированию
+                                    <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <!-- /.box-footer-->
+            </div>
+            <!-- /.box -->
+
+        </section>
+
+    </div>
+{% endblock %}

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use League\Flysystem\Adapter\Local;
-use League\Flysystem\Filesystem;
 
 class PageController
 {
