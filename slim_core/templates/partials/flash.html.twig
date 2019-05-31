@@ -1,20 +1,23 @@
 {% if flash('success') %}
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h4><i class="icon fa fa-check"></i> Alert!</h4>
-     {{ flash('success') }}
+    <h4><i class="icon fa fa-check"></i> Выполнено</h4>
+    {{ flash('success') }}
 </div>
 {% endif %}
 
 {% if flash('error') %}
-<div class="alert alert-danger">
-    {{ flash('error') }}
+<div class="alert alert-error alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-check"></i> Ошибка</h4>
+     {{ flash('error') }}
 </div>
 {% endif %}
 
 {% if flash('errors') %}
-    {% for error in flash('errors') %}
-        <div class="alert alert-danger">
+     {% for error in flash('errors') %}
+        <div class="alert alert-error alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
             {{ error }}
         </div>
     {% endfor %}
