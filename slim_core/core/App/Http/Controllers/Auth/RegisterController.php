@@ -46,11 +46,11 @@ class RegisterController
         try {
             $this->service->register($data);
         } catch (\DomainException $e) {
-            return redirect($response)->with('status', $e->getMessage())->route('register.index');
+            return redirect($response)->with('error', $e->getMessage())->route('register.index');
         }
 
         return redirect($response)
-            ->with('status', 'Аккаунт был успешно зарегистрирован.')
+            ->with('success', 'Аккаунт был успешно зарегистрирован.')
             ->route('register.index');
     }
 }

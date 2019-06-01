@@ -22,6 +22,15 @@ class UserRepository
         $this->repo = $this->em->getRepository(User::class);
     }
 
+    public function hasByEmail(string $email): bool
+    {
+        return $this->repo->createQueryBuilder('t')
+                ->select('COUNT(t.id)')
+                ->andWhere('t.email = :email')
+                ->setParameter(':email', $email)
+                ->getQuery()->getSingleScalarResult() > 0;
+    }
+
     public function getByEmail(string $email): User
     {
         /** @var User $user */

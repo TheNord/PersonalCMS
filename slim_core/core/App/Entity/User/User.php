@@ -43,6 +43,11 @@ class User
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="boolean", name="is_admin", options={"default" : 0})
+     */
+    private $is_admin;
+
 
     public function __construct(
         \DateTimeImmutable $date,
@@ -54,6 +59,7 @@ class User
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
+        $this->is_admin = 0;
     }
 
     public function getId(): int
@@ -89,5 +95,10 @@ class User
     public function setPassword(string $password)
     {
         $this->password = $password;
+    }
+
+    public function checkAdminAccess()
+    {
+        return $this->is_admin;
     }
 }

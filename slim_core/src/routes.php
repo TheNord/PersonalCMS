@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AdminAccessMiddleware;
 use App\Http\Middleware\AuthMiddleware;
 
 // Auth routes
@@ -38,7 +39,7 @@ $app->group('/admin', function () use ($app) {
     // Admin profile
     $app->get('/profile', 'App\Http\Controllers\Admin\ProfileController:index')->setName('admin.profile');
     $app->put('/profile', 'App\Http\Controllers\Admin\ProfileController:update')->setName('admin.profile.update');
-})->add(AuthMiddleware::class);
+})->add(AdminAccessMiddleware::class);
 
 $app->get('/','App\Http\Controllers\MainPageController:index')->setName('home');
 
