@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ReadModel\SettingsRepository;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -50,5 +51,25 @@ class SettingsController
         filesystem()->put(".env", $replaceMail);
 
         return redirect($response)->with('success', 'Настройки проекта успешно обновлены')->route('admin.settings');
+    }
+
+    public function counters()
+    {
+        $repository = new SettingsRepository();
+
+        $counters = $repository->find('counters');
+
+        return view('app/settings/counters', compact('counters'));
+    }
+
+    public function countersUpdate(RequestInterface $request, ResponseInterface $response)
+    {
+        $value = $request->getParsedBody()['value'];
+
+        $repository = new SettingsRepository();
+
+        $repository->changeValue('counters', $value);
+
+        return redirect($response)->with('success', 'Настройки счётчиков успешно обновлены')->route('admin.settings');
     }
 }

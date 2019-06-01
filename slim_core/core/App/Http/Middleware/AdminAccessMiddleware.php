@@ -16,12 +16,9 @@ class AdminAccessMiddleware
         /** @var User $user */
         $authUser = session()->get('user');
 
-        if ($authUser) {
-            $repository = new UserRepository();
-            $user = $repository->getByEmail($authUser->getEmail());
-        }
+        $authUser ? $user = (new UserRepository())->getByEmail($authUser->getEmail()) : $user = null;
 
-        if ($user->checkAdminAccess()) {
+        if ($user && $user->checkAdminAccess()) {
             SessionHelper::regenerateId();
             return $next($request, $response);
         }

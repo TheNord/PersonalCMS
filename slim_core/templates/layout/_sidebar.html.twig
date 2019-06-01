@@ -6,5 +6,8 @@
     </li>
     <li class="{{ page is same as('pages') ? 'active' : '' }}"><a href="{{ path_for('pages') }}"><i class="fa fa-pencil-square-o"></i> <span>Управление страницами</span></a></li>
     <li class="{{ page is same as('contacts') ? 'active' : '' }}"><a href="{{ path_for('admin.contacts') }}"><i class="fa fa-newspaper-o"></i> <span>Заявки пользователей</span></a></li>
+
+    <li class="header">УПРАВЛЕНИЕ САЙТОМ</li>
+    <li class="{{ page is same as('settings-counters') ? 'active' : '' }}"><a href="{{ path_for('admin.settings.counters') }}"><i class="fa fa-gear"></i> <span>Настройка счётчиков</span></a></li>
     <li class="{{ page is same as('settings') ? 'active' : '' }}"><a href="{{ path_for('admin.settings') }}"><i class="fa fa-gears"></i> <span>Настройки сайта</span></a></li>
 </ul>

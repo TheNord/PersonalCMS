@@ -1,0 +1,66 @@
+{% extends 'layout/app.html.twig' %}
+
+{% set page = 'settings-counters' %}
+
+{% block title %}Управление настройками - счётчики
+{% endblock %}
+
+{% block content %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Управление настройками
+            </h1>
+        </section>
+
+        <section class="content">
+
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-text-width"></i>
+
+                    <h3 class="box-title">Описание</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <dl>
+                        <dt>Инструкция по использованию</dt>
+                        <dd>На данной странице вы можете добавлять новые счётчики или удалять старые</dd>
+                        <dd>Помимо счётчиков также доступно добавление любых нужных вам скриптов</dd>
+                        <dd><br></dd>
+                        <dt>Где получить код счётчика</dt>
+                        <dd>Для получения кода счетчика от LiveInternet вам нужно перейти на сайт <a href="https://www.liveinternet.ru/add" target="_blank">LiveInternet</a> и добавить ваш сайт</dd>
+                        <dd>Для получения счетчика от Яндекса вам нужно перейти на сайт <a href="https://metrika.yandex.ru/add" target="_blank">Ядекс.Метрики</a> и добавить ваш сайт</dd>
+                        <dd></dd>
+                    </dl>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Редактирование счётчиков</h3>
+                </div>
+                <!-- /.box-header -->
+
+                <!-- form start -->
+                <form method="POST" action="{{ path_for('admin.settings.counters.update') }}">
+                    <input type="hidden" name="_METHOD" value="PUT"/>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <textarea class="form-control" name="value" rows="14">{{ counters.value }}</textarea>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <a class="btn btn-default" href="{{ path_for('admin.settings') }}">Отменить</a>
+                        <button class="btn btn-info pull-right" type="submit">Сохранить</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

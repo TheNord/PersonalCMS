@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ReadModel\SettingsRepository;
 use App\ReadModel\StatisticsReadRepository;
 
 class MainPageController
@@ -12,6 +13,8 @@ class MainPageController
 
         $statistics->addView();
 
-        return view('main/home');
+        $counters = (new SettingsRepository())->find('counters');
+
+        return view('main/home', compact('counters'));
     }
 }

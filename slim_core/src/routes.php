@@ -36,6 +36,11 @@ $app->group('/admin', function () use ($app) {
     $app->get('/settings/project', 'App\Http\Controllers\Admin\SettingsController:project')->setName('admin.settings.project');
     $app->put('/settings/project', 'App\Http\Controllers\Admin\SettingsController:projectUpdate')->setName('admin.settings.project.update');
 
+    // Counters setting
+    $app->get('/settings/counters', 'App\Http\Controllers\Admin\SettingsController:counters')->setName('admin.settings.counters');
+    $app->put('/settings/counters', 'App\Http\Controllers\Admin\SettingsController:countersUpdate')->setName('admin.settings.counters.update');
+
+
     // Admin profile
     $app->get('/profile', 'App\Http\Controllers\Admin\ProfileController:index')->setName('admin.profile');
     $app->put('/profile', 'App\Http\Controllers\Admin\ProfileController:update')->setName('admin.profile.update');
