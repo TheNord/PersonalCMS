@@ -40,10 +40,12 @@ $app->group('/admin', function () use ($app) {
     $app->get('/settings/counters', 'App\Http\Controllers\Admin\SettingsController:counters')->setName('admin.settings.counters');
     $app->put('/settings/counters', 'App\Http\Controllers\Admin\SettingsController:countersUpdate')->setName('admin.settings.counters.update');
 
-
     // Admin profile
     $app->get('/profile', 'App\Http\Controllers\Admin\ProfileController:index')->setName('admin.profile');
     $app->put('/profile', 'App\Http\Controllers\Admin\ProfileController:update')->setName('admin.profile.update');
+
+    // Ajax images upload
+    $app->post('/upload/image', 'App\Http\Controllers\Admin\UploadsController:storeImage');
 })->add(AdminAccessMiddleware::class);
 
 $app->get('/','App\Http\Controllers\MainPageController:index')->setName('home');

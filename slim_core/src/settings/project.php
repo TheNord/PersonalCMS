@@ -11,6 +11,7 @@ return [
 
         'projectName' => getenv('PROJECT_NAME'),
 
-        'root_folder' => __DIR__ . '/../../'
+        'root_folder' => __DIR__ . '/../../',
+        'public_folder' => __DIR__ . '/../../../'
     ],
 ];
