@@ -9,5 +9,6 @@
 
     <li class="header">УПРАВЛЕНИЕ САЙТОМ</li>
     <li class="{{ page is same as('settings-counters') ? 'active' : '' }}"><a href="{{ path_for('admin.settings.counters') }}"><i class="fa fa-gear"></i> <span>Настройка счётчиков</span></a></li>
+    <li class="{{ page is same as('settings-meta') ? 'active' : '' }}"><a href="{{ path_for('admin.settings.meta') }}"><i class="fa fa-github-alt"></i> <span>Мета информация</span></a></li>
     <li class="{{ page is same as('settings') ? 'active' : '' }}"><a href="{{ path_for('admin.settings') }}"><i class="fa fa-gears"></i> <span>Настройки сайта</span></a></li>
 </ul>

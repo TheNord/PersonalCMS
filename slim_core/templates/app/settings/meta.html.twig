@@ -1,0 +1,52 @@
+{% extends 'layout/app.html.twig' %}
+
+{% set page = 'settings-meta' %}
+
+{% block title %}Управление настройками - мета информация
+{% endblock %}
+
+{% block content %}
+    <div
+        class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Управление настройками
+            </h1>
+        </section>
+
+        <section class="content">
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Редактирование мета информации</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form method="POST" action="{{ path_for('admin.settings.meta.update') }}">
+                    <input type="hidden" name="_METHOD" value="PUT"/>
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="title">Заголовок страницы (title)</label>
+                            <input class="form-control" id="title" name="title" type="text" value="{{ meta.title }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Описание страницы (description)</label>
+                            <input class="form-control" id="description" name="description" type="text" value="{{ meta.description }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="keywords">Ключевые слова (keywords)</label>
+                            <input class="form-control" id="keywords" name="keywords" type="text" value="{{ meta.keywords }}">
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <a class="btn btn-default" href="{{ path_for('admin.settings') }}">Отменить</a>
+                        <button class="btn btn-info pull-right" type="submit">Сохранить</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+        </section>
+    </div>
+{% endblock %}

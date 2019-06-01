@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ReadModel\PageMetaRepository;
 use App\ReadModel\SettingsRepository;
 use App\ReadModel\StatisticsReadRepository;
 
@@ -15,6 +16,8 @@ class MainPageController
 
         $counters = (new SettingsRepository())->find('counters');
 
-        return view('main/home', compact('counters'));
+        $meta = (new PageMetaRepository())->find('home');
+
+        return view('main/home', compact('counters', 'meta'));
     }
 }

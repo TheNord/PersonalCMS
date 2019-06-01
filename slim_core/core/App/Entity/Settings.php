@@ -18,7 +18,7 @@ class Settings
     private $id;
 
     /**
-     * @ORM\Column(type="string", unique=true,)
+     * @ORM\Column(type="string", unique=true)
      */
     private $name;
 

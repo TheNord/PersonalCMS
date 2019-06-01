@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ReadModel\PageMetaRepository;
 use App\ReadModel\SettingsRepository;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -71,5 +72,29 @@ class SettingsController
         $repository->changeValue('counters', $value);
 
         return redirect($response)->with('success', 'Настройки счётчиков успешно обновлены')->route('admin.settings');
+    }
+
+    public function meta()
+    {
+        $repository = new PageMetaRepository();
+
+        $meta = $repository->find('home');
+
+        return view('app/settings/meta', compact('meta'));
+    }
+
+    public function metaUpdate(RequestInterface $request, ResponseInterface $response)
+    {
+        $data = $request->getParsedBody();
+
+        $title = $data['title'];
+        $description = $data['description'];
+        $keywords = $data['keywords'];
+
+        $repository = new PageMetaRepository();
+
+        $repository->changeMetaDate('home', $title, $description, $keywords);
+
+        return redirect($response)->with('success', 'Настройки мета информации успешно обновлены')->route('admin.settings');
     }
 }
