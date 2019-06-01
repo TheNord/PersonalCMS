@@ -33,7 +33,7 @@ class StatisticsReadRepository
     {
         $lastDay = $this->getTodayStats();
 
-        if (Carbon::createFromImmutable($lastDay->getDate())->format('Y-m-d') === Carbon::now()->format('Y-m-d')) {
+        if ($lastDay && $lastDay->getDate()->format('Y-m-d') === Carbon::now()->format('Y-m-d')) {
             $lastDay->incrementView();
             $this->em->flush();
             return true;
@@ -41,7 +41,7 @@ class StatisticsReadRepository
 
         $view = new Statistics(
             \DateTimeImmutable::createFromMutable(new \DateTime()),
-            1,
+            1
         );
 
         $this->em->persist($view);

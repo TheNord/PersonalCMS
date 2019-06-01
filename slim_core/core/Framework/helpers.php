@@ -83,9 +83,9 @@ if (! function_exists('flash')) {
     }
 }
 
-if (! function_exists('auth')) {
+if (! function_exists('session')) {
     /**
-     * Get current auth user
+     * Get session instance
      *
      * @param string $key
      * @param string|array $value
@@ -100,6 +100,22 @@ if (! function_exists('auth')) {
         }
 
         return $session;
+    }
+}
+
+if (! function_exists('user')) {
+    /**
+     * Get current user
+     *
+     * @return Aura\Session\SessionFactory
+     */
+    function user()
+    {
+        $session = app()->get('session');
+
+        $user = $session->get('user');
+
+        return $user;
     }
 }
 

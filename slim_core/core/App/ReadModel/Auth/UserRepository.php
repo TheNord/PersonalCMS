@@ -4,6 +4,7 @@ namespace App\ReadModel\Auth;
 
 use App\Entity\User\ConfirmToken;
 use App\Entity\User\User;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityNotFoundException;
 
@@ -15,19 +16,10 @@ class UserRepository
     private $repo;
     private $em;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct()
     {
-        $this->repo = $em->getRepository(User::class);
-        $this->em = $em;
-    }
-
-    public function hasByEmail(string $email): bool
-    {
-        return $this->repo->createQueryBuilder('t')
-                ->select('COUNT(t.id)')
-                ->andWhere('t.email = :email')
-                ->setParameter(':email', $email)
-                ->getQuery()->getSingleScalarResult() > 0;
+        $this->em = app()->get(EntityManager::class);
+        $this->repo = $this->em->getRepository(User::class);
     }
 
     public function getByEmail(string $email): User

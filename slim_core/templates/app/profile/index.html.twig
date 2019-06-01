@@ -2,8 +2,7 @@
 
 {% set page = 'settings' %}
 
-{% block title %}Управление настройками - проект
-{% endblock %}
+{% block title %}Редактирование профиля{% endblock %}
 
 {% block content %}
     <div
@@ -11,7 +10,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Управление настройками
+                Редактирование профиля
             </h1>
         </section>
 
@@ -19,25 +18,31 @@
 
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Редактирование настроек проекта</h3>
+                    <h3 class="box-title">Редактирование профиля</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form method="POST" action="{{ path_for('admin.settings.project.update') }}">
+                <form method="POST" action="{{ path_for('admin.profile.update') }}">
                     <input type="hidden" name="_METHOD" value="PUT"/>
                     <div class="box-body">
+                        {% include 'partials/flash.html.twig' %}
+
                         <div class="form-group">
-                            <label for="emailAdmin">Email администратора (для писем)</label>
-                            <input class="form-control" id="emailAdmin" name="mailAdmin" type="email" value="{{ mailAdmin }}" required>
+                            <label for="email">Email</label>
+                            <input class="form-control" id="email" name="email" type="email" value="{{ user.email }}" disabled>
                         </div>
                         <div class="form-group">
-                            <label for="projectName">Название проекта (для писем)</label>
-                            <input class="form-control" id="projectName" name="projectName" type="text" value="{{ projectName }}" required>
+                            <label for="name">Имя</label>
+                            <input class="form-control" id="name" name="name" type="text" value="{{ user.name }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input class="form-control" id="password" name="password" type="password" value="" required>
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <a class="btn btn-default" href="{{ path_for('admin.settings') }}">Отменить</a>
+                        <a class="btn btn-default" href="{{ path_for('dashboard') }}">Отменить</a>
                         <button class="btn btn-info pull-right" type="submit">Сохранить</button>
                     </div>
                     <!-- /.box-footer -->

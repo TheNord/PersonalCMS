@@ -43,6 +43,7 @@
                             <td>{{ contact.createDate|date('Y-m-d H:i') }}</td>
                             <td>
                                 <form action="{{ path_for('admin.contacts.destroy', {'id': contact.id}) }}" method="POST">
+                                    <input type="hidden" name="_METHOD" value="DELETE"/>
                                     <button onclick="return confirm('Вы уверенны?')" type="submit" class="delete">
                                         <i class="fa fa-remove"></i>
                                     </button>
